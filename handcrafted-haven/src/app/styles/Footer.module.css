@@ -1,0 +1,105 @@
+/* Footer container */
+.footer {
+    background-color: rgb(238, 238, 238); 
+    color: #b08968; 
+    padding: 20px 0;
+    width: 100vw;
+    margin: 0; 
+    position: relative; 
+}
+
+/* Inner content wrapper */
+.footerContent {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+/* Footer sections */
+.footerTop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footerSection {
+    flex: 1;
+    margin: 0 10px;  
+}
+
+.footerSection h3 {
+    color: #b08968; 
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footerSection ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerSection ul li {
+    margin-bottom: 10px;
+}
+
+.footerSection ul li a {
+    color: #0A6847; 
+    text-decoration: none; 
+    font-size: 14px;
+}
+
+/* Social column styles */
+.socialColumn ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.socialColumn ul li {
+    display: inline-block;
+    margin-right: 10px; 
+}
+
+.social {
+    max-height: 25px; 
+}
+
+/* Footer copy */
+.footerBottom {
+    
+    color: #0A6847; /* White text color */
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+/* Clear fix to ensure footer covers full width */
+.footer::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .footer {
+        padding: 10px;
+    }
+
+    .footerSection {
+        margin: 10px 0;
+        flex: 1;
+    }
+
+    .copy {
+        margin-top: 30px;
+    }
+
+    .copy p {
+        font-size: 11px;
+    }
+
+    .social {
+        max-height: 20px; 
+    }
+}

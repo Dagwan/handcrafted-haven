@@ -1,0 +1,176 @@
+/* Header styles */
+.header {
+    /* Styles for the header */
+    background-color: white;
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Wrapper for header content */
+.headerWrapper {
+    /* Styles for the header content wrapper */
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Navigation styles */
+.mainNav {
+    /* Styles for the main navigation */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0;
+}
+
+/* Brand logo styles */
+.brandLogo {
+    /* Styles for the brand logo */
+    display: flex;
+    align-items: center;
+}
+
+/* Company name styles */
+.companyName {
+    /* Styles for the company name */
+    font-size: 1.5rem;
+    color: #b08968;
+}
+
+.logo {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    margin-right: 10px; 
+}
+
+
+/* Hamburger menu styles */
+.hamburger {
+    /* Styles for the hamburger menu */
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.hamburger span {
+    /* Styles for each line of the hamburger */
+    height: 4px;
+    width: 25px;
+    background: #b08968;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Navigation container styles */
+.nav {
+    /* Styles for the navigation container */
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation list styles */
+.nav ul {
+    /* Styles for the navigation list */
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Navigation list item styles */
+.nav ul li {
+    /* Styles for each navigation item */
+    margin: 0 1.5rem;
+    position: relative;
+}
+
+/* Navigation link styles */
+.nav ul li a {
+    /* Styles for navigation links */
+    color: #0A6847;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+    /* Styles for navigation link hover state */
+    color: #ff8c00;
+}
+
+/* Underline effect for links */
+.nav ul li a::after {
+    /* Styles for the underline effect */
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #ff8c00;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav ul li a:hover::after {
+    /* Styles for the underline effect on hover */
+    width: 100%;
+    left: 0;
+}
+
+/* Header styles on scroll */
+.header.scrolled {
+    /* Styles for the header when scrolled */
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hamburger {
+        /* Styles for the hamburger menu on smaller screens */
+        display: flex;
+    }
+
+    .nav {
+        /* Styles for the navigation on smaller screens */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100vw;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+    }
+
+    .nav.open {
+        /* Styles for the navigation when open */
+        max-height: 300px;
+        opacity: 1;
+    }
+
+    .nav ul {
+        /* Styles for the navigation list on smaller screens */
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav ul li {
+        /* Styles for each navigation item on smaller screens */
+        margin: 0.5rem 0;
+    }
+}

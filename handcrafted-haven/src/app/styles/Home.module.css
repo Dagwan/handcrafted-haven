@@ -1,0 +1,206 @@
+/* styles/Home.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.main {
+    flex: 1;
+    padding: 20px;
+   
+    width: 1200px; /* Set max width */
+    margin: 0 auto;    /* Center the content */
+}
+
+.hero {
+    background: url('/images/hero-image.JPG') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.ctaButton {
+    background-color: #b08968;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.ctaButton:hover {
+    background-color: #0096c7;
+}
+
+.productGrid,
+.whyGrid,
+.testimonialGrid,
+.blogGrid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-bottom: 40px;
+}
+
+.productCard,
+.whyCard,
+.testimonialCard,
+.blogCard {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.productCard:hover,
+.whyCard:hover,
+.testimonialCard:hover,
+.blogCard:hover {
+    transform: scale(1.05);
+}
+
+.productCard img,
+.blogCard img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.whySection,
+.callToAction,
+.testimonials,
+.blogSection {
+    padding: 40px 20px;
+}
+
+.callToAction {
+    background-color: #0096c7;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.callToAction h2 {
+    margin-bottom: 10px;
+}
+
+
+/* Media Queries */
+
+/* Medium screens (tablets and smaller laptops) */
+@media (max-width: 1024px) {
+    .main {
+        max-width: 90%; /* Reduce width for medium screens */
+        padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .productGrid,
+    .whyGrid,
+    .testimonialGrid,
+    .blogGrid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Small screens (tablets and large phones) */
+@media (max-width: 768px) {
+    .main {
+        max-width: 100%; /* Full width for smaller devices */
+        padding: 15px;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .ctaButton {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    .productGrid,
+    .whyGrid,
+    .testimonialGrid,
+    .blogGrid {
+        grid-template-columns: 1fr; /* One column for better readability */
+    }
+}
+
+/* Extra small screens (phones) */
+@media (max-width: 480px) {
+    .main {
+        padding: 10px;
+    }
+
+    .hero {
+        padding: 30px 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .ctaButton {
+        padding: 8px 12px;
+        font-size: 0.8em;
+    }
+
+    .productCard,
+    .whyCard,
+    .testimonialCard,
+    .blogCard {
+        padding: 10px;
+    }
+
+    .callToAction {
+        padding: 20px 10px;
+    }
+
+    .callToAction h2 {
+        font-size: 1.5em;
+    }
+
+    .productGrid,
+    .whyGrid,
+    .testimonialGrid,
+    .blogGrid {
+        grid-template-columns: 1fr; /* Single column for small screens */
+    }
+}
