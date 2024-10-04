@@ -18,7 +18,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 70px; /* Space between items */
+    gap: 70px; 
 }
 
 /* Wrapper for header content */
@@ -93,22 +93,22 @@
 
 /* Navigation list item styles */
 .nav ul li {
-    margin: 0 1.5rem; /* Increased spacing */
+    margin: 0 1.5rem; 
     position: relative;
 }
 
 /* Navigation link styles */
 .nav ul li a,
-.topHeader a { /* Ensure this applies to top header links */
+.topHeader a { 
     color: #b08968;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none; 
     font-weight: 500;
     transition: color 0.3s;
-    padding: 5px; /* Add padding for better spacing */
+    padding: 5px; 
 }
 
 .nav ul li a:hover,
-.topHeader a:hover { /* Ensure this applies to hover */
+.topHeader a:hover { 
     color: #0096c7;
 }
 
@@ -145,57 +145,57 @@
 .searchContainer {
     display: flex;
     align-items: center;
-    margin-right: 20px; /* Spacing between search and cart icon */
+    margin-right: 20px; 
 }
 
 .searchInput {
-    padding: 10px; /* Padding for input */
-    border: 1px solid #ccc; /* Border for input */
-    border-radius: 4px; /* Rounded corners */
-    outline: none; /* Remove outline */
-    transition: border 0.3s; /* Transition for border */
-    width: 300px; /* Fixed width for the search input */
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    outline: none; 
+    transition: border 0.3s; 
+    width: 300px; 
 }
 
 .searchInput:focus {
-    border-color: #b08968; /* Border color on focus */
+    border-color: #b08968; 
 }
 
 .searchButton {
-    background: none; /* No background */
-    border: none; /* No border */
-    cursor: pointer; /* Pointer cursor */
-    margin-left: -40px; /* Overlap the button slightly with input */
-    z-index: 1; /* Ensure button is above the input */
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    margin-left: -40px; 
+    z-index: 1; 
 }
 
 /* Cart icon styles */
 .cartIcon {
-    font-size: 1.5rem; /* Increase size of cart icon */
-    color: #0096c7; /* Cart icon color */
+    font-size: 1.5rem; 
+    color: #0096c7; 
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
     .topHeader {
-        display: none; /* Hide top header on smaller screens */
+        display: none; 
     }
 
     .headerWrapper {
-        padding: 0 10px; /* Adjust padding for smaller screens */
+        padding: 0 10px; 
     }
 
     .nav {
-        flex-direction: column; /* Stack nav items vertically */
+        flex-direction: column; 
         position: absolute;
-        top: 80px; /* Space from the header */
+        top: 80px; 
         left: 0;
-        width: 100vw; /* Full width */
+        width: 100vw; 
         background-color: white;
-        max-height: 0; /* Start closed */
-        overflow: hidden; /* Hide overflow */
+        max-height: 0; 
+        overflow: hidden; 
         transition: max-height 0.3s ease, opacity 0.3s ease; 
-        opacity: 0; /* Hide initially */
+        opacity: 0; 
     }
 
     .nav.open {
