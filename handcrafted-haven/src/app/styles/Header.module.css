@@ -1,6 +1,5 @@
 /* Header styles */
 .header {
-    /* Styles for the header */
     background-color: white;
     width: 100vw;
     position: sticky;
@@ -11,51 +10,59 @@
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
+/* Top header styles */
+.topHeader {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px; /* Space between items */
+}
+
 /* Wrapper for header content */
 .headerWrapper {
-    /* Styles for the header content wrapper */
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Navigation styles */
 .mainNav {
-    /* Styles for the main navigation */
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    padding: 0;
 }
 
 /* Brand logo styles */
 .brandLogo {
-    /* Styles for the brand logo */
     display: flex;
     align-items: center;
 }
 
 /* Company name styles */
 .companyName {
-    /* Styles for the company name */
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #b08968;
 }
 
+/* Logo styles */
 .logo {
-    width: 50px; 
-    height: 50px; 
-    border-radius: 50%; 
-    margin-right: 10px; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
-
 
 /* Hamburger menu styles */
 .hamburger {
-    /* Styles for the hamburger menu */
     display: none;
     flex-direction: column;
     cursor: pointer;
@@ -63,7 +70,6 @@
 }
 
 .hamburger span {
-    /* Styles for each line of the hamburger */
     height: 4px;
     width: 25px;
     background: #b08968;
@@ -73,14 +79,12 @@
 
 /* Navigation container styles */
 .nav {
-    /* Styles for the navigation container */
     display: flex;
     align-items: center;
 }
 
 /* Navigation list styles */
 .nav ul {
-    /* Styles for the navigation list */
     display: flex;
     list-style: none;
     padding-left: 0;
@@ -89,88 +93,232 @@
 
 /* Navigation list item styles */
 .nav ul li {
-    /* Styles for each navigation item */
-    margin: 0 1.5rem;
+    margin: 0 1.5rem; /* Increased spacing */
     position: relative;
 }
 
 /* Navigation link styles */
-.nav ul li a {
-    /* Styles for navigation links */
-    color: #0A6847;
-    text-decoration: none;
+.nav ul li a,
+.topHeader a { /* Ensure this applies to top header links */
+    color: #b08968;
+    text-decoration: none; /* Remove underline */
     font-weight: 500;
     transition: color 0.3s;
+    padding: 5px; /* Add padding for better spacing */
 }
 
-.nav ul li a:hover {
-    /* Styles for navigation link hover state */
-    color: #ff8c00;
+.nav ul li a:hover,
+.topHeader a:hover { /* Ensure this applies to hover */
+    color: #0096c7;
 }
 
 /* Underline effect for links */
 .nav ul li a::after {
-    /* Styles for the underline effect */
     content: '';
     position: absolute;
     left: 50%;
     bottom: -5px;
     width: 0;
     height: 2px;
-    background: #ff8c00;
+    background: #b08968;
     transition: width 0.3s ease, left 0.3s ease;
 }
 
 .nav ul li a:hover::after {
-    /* Styles for the underline effect on hover */
     width: 100%;
     left: 0;
 }
 
 /* Header styles on scroll */
 .header.scrolled {
-    /* Styles for the header when scrolled */
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Header icons styles */
+.headerIcons {
+    display: flex;
+    align-items: center;
+}
+
+/* Search container styles */
+.searchContainer {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Spacing between search and cart icon */
+}
+
+.searchInput {
+    padding: 10px; /* Padding for input */
+    border: 1px solid #ccc; /* Border for input */
+    border-radius: 4px; /* Rounded corners */
+    outline: none; /* Remove outline */
+    transition: border 0.3s; /* Transition for border */
+    width: 300px; /* Fixed width for the search input */
+}
+
+.searchInput:focus {
+    border-color: #b08968; /* Border color on focus */
+}
+
+.searchButton {
+    background: none; /* No background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    margin-left: -40px; /* Overlap the button slightly with input */
+    z-index: 1; /* Ensure button is above the input */
+}
+
+/* Cart icon styles */
+.cartIcon {
+    font-size: 1.5rem; /* Increase size of cart icon */
+    color: #0096c7; /* Cart icon color */
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
-    .hamburger {
-        /* Styles for the hamburger menu on smaller screens */
-        display: flex;
+    .topHeader {
+        display: none; /* Hide top header on smaller screens */
+    }
+
+    .headerWrapper {
+        padding: 0 10px; /* Adjust padding for smaller screens */
     }
 
     .nav {
-        /* Styles for the navigation on smaller screens */
-        flex-direction: column;
+        flex-direction: column; /* Stack nav items vertically */
         position: absolute;
-        top: 80px;
+        top: 80px; /* Space from the header */
         left: 0;
-        width: 100vw;
+        width: 100vw; /* Full width */
         background-color: white;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease, opacity 0.3s ease;
-        opacity: 0;
+        max-height: 0; /* Start closed */
+        overflow: hidden; /* Hide overflow */
+        transition: max-height 0.3s ease, opacity 0.3s ease; 
+        opacity: 0; /* Hide initially */
     }
 
     .nav.open {
-        /* Styles for the navigation when open */
-        max-height: 300px;
-        opacity: 1;
+        max-height: 400px; 
+        opacity: 1; 
+    }
+
+    .hamburger {
+        display: flex; 
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(7px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-7px);
     }
 
     .nav ul {
-        /* Styles for the navigation list on smaller screens */
-        flex-direction: column;
+        flex-direction: column; 
         width: 100%;
-        padding: 0;
-        margin: 0;
     }
 
     .nav ul li {
-        /* Styles for each navigation item on smaller screens */
-        margin: 0.5rem 0;
+        margin: 10px 0; 
+        text-align: center;
+    }
+
+    .searchInput {
+        width: 200px; 
+    }
+
+    /* Company name styles */
+    .companyName {
+        font-size: 1.2rem;
+        color: #b08968;
+    }
+}
+
+/* Popup styles */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+.popup.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popupContent {
+    background-color: white;
+    width: 80%; 
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* Top header inside popup */
+.popupTopHeader {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; 
+    align-items: center;
+}
+
+.popupTopHeader a {
+    color: #b08968;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 10px; 
+}
+
+.popupTopHeader a:hover {
+    color: #0096c7;
+}
+
+/* Close button for popup */
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Popup navigation styles */
+.popupNav {
+    display: flex;
+    flex-direction: column;
+}
+
+.popupNav ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.popupNav ul li {
+    margin: 10px 0; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .popupContent {
+        width: 90%; 
     }
 }

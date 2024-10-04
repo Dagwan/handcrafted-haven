@@ -10,9 +10,8 @@
 .main {
     flex: 1;
     padding: 20px;
-   
-    width: 1200px; /* Set max width */
-    margin: 0 auto;    /* Center the content */
+    width: 1200px; 
+    margin: 0 auto;  
 }
 
 .hero {
@@ -107,7 +106,7 @@
 /* Medium screens (tablets and smaller laptops) */
 @media (max-width: 1024px) {
     .main {
-        max-width: 90%; /* Reduce width for medium screens */
+        max-width: 90%; 
         padding: 15px;
     }
 
@@ -130,7 +129,7 @@
 /* Small screens (tablets and large phones) */
 @media (max-width: 768px) {
     .main {
-        max-width: 100%; /* Full width for smaller devices */
+        max-width: 100%; 
         padding: 15px;
     }
 
@@ -155,7 +154,7 @@
     .whyGrid,
     .testimonialGrid,
     .blogGrid {
-        grid-template-columns: 1fr; /* One column for better readability */
+        grid-template-columns: 1fr; 
     }
 }
 
@@ -201,6 +200,6 @@
     .whyGrid,
     .testimonialGrid,
     .blogGrid {
-        grid-template-columns: 1fr; /* Single column for small screens */
+        grid-template-columns: 1fr; 
     }
 }
