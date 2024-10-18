@@ -56,7 +56,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
             : item
         ),
       };
-    case 'CLEAR_CART': // Handle clearing the cart
+    case 'CLEAR_CART': 
       return { items: [] };
     default:
       return state;

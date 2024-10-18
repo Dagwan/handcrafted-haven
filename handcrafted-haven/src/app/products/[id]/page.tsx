@@ -1,7 +1,7 @@
-'use client'; // Keep this line to use client-side rendering features
+'use client'; 
 
 import { useEffect, useState, useContext } from 'react';
-import { useParams } from 'next/navigation'; // Use this to get route parameters
+import { useParams } from 'next/navigation'; 
 import axios from 'axios';
 import CartContext from '../../../context/CartContext';
 
@@ -15,7 +15,7 @@ interface Product {
 }
 
 const ProductDetailsPage = () => {
-  const { id } = useParams(); // Get the product ID from the URL
+  const { id } = useParams(); 
   console.log("Product ID from URL:", id);
 
   const [product, setProduct] = useState<Product | null>(null);
@@ -28,7 +28,7 @@ const ProductDetailsPage = () => {
       if (id) {
         try {
           setLoading(true);
-          setError(null); // Clear any previous errors
+          setError(null); 
           const response = await axios.get(`https://handcrafted-haven-api.onrender.com/products/${id}`);
           setProduct(response.data);
         } catch (err) {
@@ -51,9 +51,9 @@ const ProductDetailsPage = () => {
           productId: product._id,
           name: product.title,
           price: product.price,
-          quantity: 1, // Default quantity to add
-          image: product.imageUrl, // Include image URL
-          description: product.description, // Include description
+          quantity: 1, 
+          image: product.imageUrl, 
+          description: product.description, 
         },
       });
       alert(`${product.title} has been added to your cart!`);

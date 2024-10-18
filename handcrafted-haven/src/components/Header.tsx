@@ -6,7 +6,7 @@ import { useCart } from '../context/CartContext';
 import styles from '../styles/Header.module.css';
 
 const Header = () => {
-    const { state } = useCart(); // Get the cart state
+    const { state } = useCart(); 
     const [isScrolled, setIsScrolled] = useState(false);
     const [expanded, setExpanded] = useState(false);
     const [isSearchExpanded, setIsSearchExpanded] = useState(false);

@@ -181,11 +181,7 @@ const Home: React.FC = () => {
                         </div>
                     </div>
                 </section>
-
-
-            </main>
-
-            
+            </main>            
         </div>
     );
 };

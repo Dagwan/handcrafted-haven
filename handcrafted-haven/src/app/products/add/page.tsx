@@ -21,14 +21,14 @@ const AddProductPage = () => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append('sellerId', '60d21b4667d0d8992e610c85'); // Replace with actual seller ID
+    formData.append('sellerId', '60d21b4667d0d8992e610c85'); 
     formData.append('title', title);
     formData.append('description', description);
     formData.append('price', price);
     formData.append('stockQuantity', stockQuantity);
     formData.append('categoryId', categoryId);
     if (image) {
-      formData.append('image', image); // Append the image file
+      formData.append('image', image); 
     }
 
     try {
@@ -40,7 +40,7 @@ const AddProductPage = () => {
       console.log(data);
       if (response.ok) {
         // Handle successful product addition (e.g., redirect)
-        router.push('/products'); // Redirect to the products list page
+        router.push('/products'); 
       } else {
         // Handle errors
         console.error('Error:', data);
@@ -66,9 +66,7 @@ const AddProductPage = () => {
 
     </div>
   );
-};
-
-    
+};    
     
 
 export default AddProductPage;
