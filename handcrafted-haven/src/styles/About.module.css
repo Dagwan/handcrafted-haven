@@ -1,0 +1,221 @@
+.aboutPage {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9; /* Light background for a clean look */
+}
+
+.aboutHeroSection {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.aboutHeroSection h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #333; /* Darker text for better readability */
+}
+
+.aboutHeroSection p {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  max-width: 800px;
+  color: #555; /* Softer text color */
+}
+
+.aboutSliderSection {
+  margin: 30px 0;
+}
+
+.aboutSliderImage {
+  margin-bottom: 20px;
+}
+
+.aboutMissionSection {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.aboutMissionSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.aboutMissionSection p {
+  font-size: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #666; /* Softer text color */
+}
+
+.aboutProductListingsSection {
+  margin: 50px 0;
+}
+
+.aboutProductGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.aboutProductCard {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff; /* White background for product cards */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.2s; /* Smooth scaling effect */
+}
+
+.aboutProductCard:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.aboutProductCard h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #0070f3; /* Brand color for product titles */
+}
+
+.aboutProductCard p {
+  color: #777; /* Color for product descriptions */
+}
+
+.aboutRating {
+  margin-top: 10px;
+}
+
+.aboutReviewsSection {
+  margin: 50px 0;
+}
+
+.aboutReviewsList {
+  margin-bottom: 30px;
+}
+
+.aboutReviewItem {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: #f9f9f9; /* Soft background for review items */
+}
+
+.aboutReviewForm {
+  display: flex;
+  justify-content: center;
+}
+
+.aboutReviewInput {
+  padding: 10px;
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px; /* Margin for better spacing */
+}
+
+.aboutSubmitButton {
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for button */
+}
+
+.aboutSubmitButton:hover {
+  background-color: #005bb5; /* Darker shade on hover */
+}
+
+.aboutIconSection {
+  margin: 50px 0;
+}
+
+.aboutIconGrid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.aboutIconCard {
+  text-align: center;
+  flex: 1; /* Flex property to allow icons to grow */
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.aboutIconCard:hover {
+  transform: translateY(-5px);
+}
+
+.aboutRotateIcon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #0070f3; /* Brand color for icons */
+}
+
+.aboutCallToAction {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.aboutCtaButton {
+  padding: 15px 30px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.aboutCtaButton:hover {
+  background-color: #005bb5;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .aboutProductGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items on medium screens */
+  }
+
+  .aboutProductCard {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .aboutReviewInput {
+    width: 70%; /* Wider input on smaller screens */
+  }
+
+  .aboutHeroSection h1 {
+    font-size: 2.5rem; /* Smaller font size on mobile */
+  }
+
+  .aboutHeroSection p,
+  .aboutMissionSection p {
+    font-size: 1rem; /* Smaller font size on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutProductGrid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+
+  .aboutHeroSection h1 {
+    font-size: 2rem; /* Further reduce font size */
+  }
+
+  .aboutHeroSection p,
+  .aboutMissionSection p {
+    font-size: 0.9rem; /* Further reduce font size */
+  }
+
+  .aboutReviewInput {
+    width: 80%; /* Wider input on smaller screens */
+  }
+}
