@@ -6,5 +6,4 @@ Handcrafted Haven is an innovative web application that provides a platform for 
 ## Group Members
 - Asiedu, Isaac
 - Rodrguez, Hector
-- Condori, Alvaro
 - Danladi, Dagwan

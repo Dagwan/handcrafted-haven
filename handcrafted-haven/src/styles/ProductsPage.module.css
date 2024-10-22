@@ -1,0 +1,22 @@
+/* src/styles/ProductsPage.module.css */
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+  .productCard {
+    border: 1px solid #ccc;
+    padding: 16px;
+  }
+  
+  .pagination {
+    margin-top: 16px;
+  }
+  
+  .searchInput {
+    margin-bottom: 16px;
+    padding: 8px;
+  }
+  

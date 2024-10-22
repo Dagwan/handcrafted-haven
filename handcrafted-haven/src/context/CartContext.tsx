@@ -21,7 +21,7 @@ type CartAction =
   | { type: 'ADD_ITEM'; payload: CartItem }
   | { type: 'REMOVE_ITEM'; payload: string }
   | { type: 'UPDATE_ITEM_QUANTITY'; payload: { productId: string; quantity: number } }
-  | { type: 'CLEAR_CART' }; // Add this line
+  | { type: 'CLEAR_CART' }; 
 
 // Load cart items from localStorage
 const loadCartFromLocalStorage = (): CartState => {
@@ -56,6 +56,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
             : item
         ),
       };
+    // Handle clearing the cart
     case 'CLEAR_CART': 
       return { items: [] };
     default:
