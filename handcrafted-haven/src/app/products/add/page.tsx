@@ -5,7 +5,7 @@ import { useState } from 'react';
 import axios from 'axios';
 // import { useRouter } from 'next/router';
 import { useRouter } from 'next/navigation';
-
+import styles from "../../../styles/AddProduct.module.css";
 
 
 const AddProductPage = () => {
@@ -51,25 +51,24 @@ const AddProductPage = () => {
   };
 
   return (
-    <div>
-    
+    <div className={styles.container}>
 
-      <form onSubmit={handleAddProduct}>
-      <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" required />
-      <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description"></textarea>
-      <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Price" required />
-      <input type="number" value={stockQuantity} onChange={(e) => setStockQuantity(e.target.value)} placeholder="Stock Quantity" />
-      <input type="text" value={categoryId} onChange={(e) => setCategoryId(e.target.value)} placeholder="Category ID" />
-      <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files![0])} required />
-      <button type="submit">Add Product</button>
-    </form>
+      <form onSubmit={handleAddProduct} className={styles.gridContainer}>
+        <input className={styles.input} type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" required />
+        <textarea className={styles.textarea} value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description"></textarea>
+        <input className={styles.input} type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Price" required />
+        <input className={styles.input} type="number" value={stockQuantity} onChange={(e) => setStockQuantity(e.target.value)} placeholder="Stock Quantity" />
+        <input className={styles.input} type="text" value={categoryId} onChange={(e) => setCategoryId(e.target.value)} placeholder="Category ID" />
+        <input className={styles.fileInput} type="file" accept="image/*" onChange={(e) => setImage(e.target.files![0])} required />
+        <button className={styles.button} type="submit">Add Product</button>
+      </form>
 
     </div>
   );
 };
 
-    
-    
+
+
 
 export default AddProductPage;
 
