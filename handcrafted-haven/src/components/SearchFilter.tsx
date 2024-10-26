@@ -2,6 +2,7 @@
 'use client';
 
 import React from 'react';
+import styles from '../styles/SearchFilter.module.css'
 
 interface SearchFilterProps {
   sortOption: string;
@@ -13,7 +14,7 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ sortOption, setSortOption }
     <div>
       <label>
         Sort by:
-        <select value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
+        <select  className={styles.select} value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
           <option value="newest">Newest Arrivals</option>
           <option value="price">Price</option>
           <option value="highest-rated">Highest Rated</option>

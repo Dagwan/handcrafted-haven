@@ -1,22 +1,105 @@
-/* src/styles/ProductsPage.module.css */
+/* styles/ProductsPage.module.css */
+
+.container {
+  display: flex;
+  justify-content: flex-start; /* Align sidebar and content */
+  height: auto; /* Allow content height to adjust */
+  background-color: #f5f5f5; /* Light gray background */
+}
+
+.content {
+  flex-grow: 1; /* Allow this section to grow and fill available space */
+  margin-left: 20px; /* Space between sidebar and content */
+  padding: 20px; /* Padding around content */
+}
+
+.productList {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+}
 
 .gridContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 16px; /* Space between product cards */
+}
+
+.productCard {
+  border: 1px solid #ccc; /* Light border for product cards */
+  padding: 16px; /* Padding inside product cards */
+  border-radius: 4px; /* Rounded corners for product cards */
+  background-color: white; /* White background for product cards */
+}
+
+.productImage {
+  max-width: 100%; /* Responsive image size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Button styles from previous CSS */
+.button {
+  padding: 8px; /* Reduced padding for smaller buttons */
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px; /* Smaller font size for buttons */
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #005bb5;
+}
+
+.button:disabled {
+  background-color: #ccc;
+}
+
+/* Styles for select element */
+.select {
+  padding: 8px; /* Padding for select element */
+  border-radius: 4px; /* Rounded corners */
+  border: 1px solid #ccc; /* Light border for select element */
+  font-size: 14px; /* Font size for select options */
+}
+
+/* Flex container for button and search filter */
+.buttonSearchContainer {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Space between button and search filter */
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Space between items */
+  border: 1px solid #ccc; /* Light border for product cards */
+  padding: 16px; /* Padding inside product cards */
+  border-radius: 4px; /* Rounded corners for product cards */
+  background-color: white; /* White background for product cards */
+  height: 100%; /* Ensure it takes full height of its container */
+}
+
+.buttonContainer {
+  margin-top: auto; /* Pushes the button container to the bottom */
+}
+
+/* Responsive Design Example (for smaller screens) */
+@media (max-width: 600px) {
+  .gridContainer {
+      grid-template-columns: repeat(1, 1fr); /* 1 column on small screens */
+      gap: 12px; /* Reduce gap on small screens */
   }
-  
-  .productCard {
-    border: 1px solid #ccc;
-    padding: 16px;
+
+  .content {
+      margin-left: 10px; /* Reduce margin on small screens */
+      padding: 10px; /* Adjust padding for smaller screens */
   }
-  
-  .pagination {
-    margin-top: 16px;
+
+  .buttonSearchContainer {
+      flex-direction: column; /* Stack elements vertically on small screens */
+      align-items: flex-start; /* Align items to the start on small screens */
+      gap: 5px; /* Reduce gap when stacked vertically */
   }
-  
-  .searchInput {
-    margin-bottom: 16px;
-    padding: 8px;
-  }
-  
+}

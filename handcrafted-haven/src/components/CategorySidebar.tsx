@@ -1,6 +1,7 @@
 // components/CategorySidebar.tsx
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import styles from '../styles/Categories.module.css';
 
 interface Category {
   _id: string;
@@ -38,27 +39,27 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ selectedCategory, set
   if (error) return <p>{error}</p>;
 
   return (
-    <div>
-      <h3>Categories</h3>
-      <ul>
-        <li 
-          onClick={() => setSelectedCategory(null)} 
-          style={{ cursor: 'pointer', fontWeight: selectedCategory === null ? 'bold' : 'normal' }}
-        >
-          All Products
-        </li>
-        {categories.map(category => (
-          <li 
-            key={category._id} 
-            onClick={() => setSelectedCategory(category._id)} 
-            style={{ cursor: 'pointer', fontWeight: selectedCategory === category._id ? 'bold' : 'normal' }}
-          >
-            {category.name}
-          </li>
-        ))}
-      </ul>
+    <div className={styles.categoryContainer}>
+        <h3>Categories</h3>
+        <ul className={styles.categoryList}>
+            <li 
+                onClick={() => setSelectedCategory(null)} 
+                className={`${styles.categoryItem} ${selectedCategory === null ? styles.selected : ''}`}
+            >
+                All Products
+            </li>
+            {categories.map(category => (
+                <li 
+                    key={category._id} 
+                    onClick={() => setSelectedCategory(category._id)} 
+                    className={`${styles.categoryItem} ${selectedCategory === category._id ? styles.selected : ''}`}
+                >
+                    {category.name}
+                </li>
+            ))}
+        </ul>
     </div>
-  );
+);
 };
 
 export default CategorySidebar;
