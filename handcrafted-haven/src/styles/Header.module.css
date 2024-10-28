@@ -11,20 +11,7 @@
     transition: background-color 0.3s, box-shadow 0.3s;
   }
 
-  /* 
-  {
-    background-color: white;
-    width: 100vw;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    margin: 0;
-    padding: 0;
-    
-}
-
-  */
-
+ 
 /* Top header styles */
 .topHeader {
     max-width: 1200px;
