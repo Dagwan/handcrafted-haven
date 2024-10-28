@@ -1,0 +1,92 @@
+/* SellerProfile.module.css */
+
+.profileContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profileImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .sellerName {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .bio {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .productsTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .productCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .productCard:hover {
+    transform: scale(1.05);
+  }
+  
+  .productImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .productTitle {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .productDescription {
+    font-size: 14px;
+    color: #777;
+    margin: 10px 0;
+  }
+  
+  .productPrice {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .addToCartButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .addToCartButton:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,9 +1,11 @@
-'use client'; 
+'use client';
 
 import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'next/navigation'; 
 import axios from 'axios';
+import RootLayout from '@/app/layout';
 import CartContext from '../../../context/CartContext';
+import styles from '../../../styles/ViewSingleProduct.module.css';
 
 interface Product {
   _id: string;
@@ -53,6 +55,8 @@ const ProductDetailsPage = () => {
     fetchProduct();
   }, [id]);
 
+  
+
   const addToCart = () => {
     if (product) {
       dispatch({
@@ -96,52 +100,77 @@ const ProductDetailsPage = () => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       stars.push(
-        <span key={i} style={{ color: i <= rating ? 'gold' : 'lightgray' }}>★</span>
+        <span key={i} className={i <= rating ? styles.filledStar : styles.emptyStar}>★</span>
       );
     }
     return stars;
   };
 
   if (loading) return <p>Loading product details...</p>;
-  if (error) return <p>{error}</p>;
+  if (error) return <p className={styles.error}>{error}</p>;
   if (!product) return <p>Product not found.</p>;
 
-  return (
-    <div style={{ padding: '16px' }}>
-      <h1>{product.title}</h1>
-      {product.imageUrl && <img src={product.imageUrl} alt={product.title} style={{ maxWidth: '100%' }} />}
-      <p>{product.description}</p>
-      <p>Price: ${product.price}</p>
-      <p>Stock: {product.stockQuantity > 0 ? product.stockQuantity : 'Out of Stock'}</p>
-      <button onClick={addToCart} disabled={product.stockQuantity === 0}>
-        {product.stockQuantity > 0 ? 'Add to Cart' : 'Out of Stock'}
-      </button>
 
-      <h2>Reviews</h2>
-      <form onSubmit={submitReview}>
-        <label>
-          Rating (1-5):
-          <input type="number" min="1" max="5" value={newReview.rating} onChange={(e) => setNewReview({ ...newReview, rating: Number(e.target.value) })} required />
-        </label>
-        <label>
-          Comment:
-          <textarea value={newReview.comment} onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })} required />
-        </label>
-        <button type="submit">Submit Review</button>
-      </form>
-      
-      <h3>Existing Reviews</h3>
-      <ul>
-        {reviews.map(review => (
-          <li key={review._id}>
-            <p><strong>Rating:</strong> {renderStars(review.rating)}</p>
-            <p>{review.comment}</p>
-            <p><em>Submitted on: {new Date(review.createdAt).toLocaleDateString()}</em></p>
-          </li>
-        ))}
-      </ul>
+return (
+  <RootLayout pageTitle="Product Item">
+  <div className={styles.container}>
+    <h1 className={styles.title}>{product.title}</h1>
+    <div className={styles.detailsContainer}>
+      {product.imageUrl && (
+        <img src={product.imageUrl} alt={product.title} className={styles.productImage} />
+      )}
+      <div className={styles.infoContainer}>
+        <p className={styles.description}>{product.description}</p>
+        <p className={styles.price}>Price: ${product.price.toFixed(2)}</p>
+        <p className={styles.stock}>Stock: {product.stockQuantity > 0 ? product.stockQuantity : 'Out of Stock'}</p>
+        <button className={styles.addToCartButton} onClick={addToCart} disabled={product.stockQuantity === 0}>
+          {product.stockQuantity > 0 ? 'Add to Cart' : 'Out of Stock'}
+        </button>
+
+        {/* Review Form */}
+        <h2 className={styles.reviewTitle}>Submit a Review</h2>
+        <form className={styles.reviewForm} onSubmit={submitReview}>
+          <label className={styles.label}>
+            Rating (1-5):
+            <input 
+              type="number" 
+              min="1" 
+              max="5" 
+              value={newReview.rating} 
+              onChange={(e) => setNewReview({ ...newReview, rating: Number(e.target.value) })} 
+              required 
+              className={styles.input} 
+            />
+          </label>
+          <label className={styles.label}>
+            Comment:
+            <textarea 
+              value={newReview.comment} 
+              onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })} 
+              required 
+              className={styles.textarea} 
+            />
+          </label>
+          <button type="submit" className={styles.submitReviewButton}>Submit Review</button>
+        </form>
+      </div>
     </div>
-  );
+
+    {/* Existing Reviews */}
+    <h2 className={styles.existingReviewsTitle}>Existing Reviews</h2>
+    <ul className={styles.reviewList}>
+      {reviews.map(review => (
+        <li key={review._id} className={styles.reviewItem}>
+          <div className={styles.rating}>{renderStars(review.rating)}</div>
+          <p>{review.comment}</p>
+          <p>Reviewed on: {new Date(review.createdAt).toLocaleDateString()}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+  </RootLayout>
+);
+
 };
 
 export default ProductDetailsPage;

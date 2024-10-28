@@ -42,8 +42,8 @@ const Header = () => {
     <>
       <div className={styles.topHeader}>
         <Link href="/login">Login</Link>
-        <Link href="/register">Register</Link>
-        <Link href="/shop">Shop Now</Link>
+        <Link href="/user">Register</Link>
+        <Link href="/products">Shop Now</Link>
         <div className={`${styles.searchContainer} ${isSearchExpanded ? styles.expanded : ''}`}>
           <input
             type="text"
@@ -74,6 +74,7 @@ const Header = () => {
             <span className={expanded ? styles.active : ''}></span>
             <span className={expanded ? styles.active : ''}></span>
             <span className={expanded ? styles.active : ''}></span>
+            <span className={expanded ? styles.active : ''}></span>
           </div>
 
           <nav className={`${styles.nav} ${expanded ? styles.open : ''}`}>
@@ -94,7 +95,7 @@ const Header = () => {
             <div className={styles.popupTopHeader}>
               <Link href="/shop">Shop Now</Link>
               <Link href="/login" onClick={handleNavClick}>Login</Link>
-              <Link href="/register" onClick={handleNavClick}>Register</Link>
+              <Link href="/user" onClick={handleNavClick}>Register</Link>
             </div>
             <nav className={styles.popupNav}>
               <ul>

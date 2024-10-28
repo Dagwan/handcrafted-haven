@@ -1,0 +1,217 @@
+/* Main container for the cart page */
+.cartContainer {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    font-family: Arial, sans-serif; 
+}
+
+/* Title styling */
+.title {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+/* Message for empty cart */
+.emptyCartMessage {
+    text-align: center; 
+    font-size: 18px; 
+    color: #666; 
+}
+
+/* List styling for cart items */
+.cartList {
+    list-style: none; 
+    padding: 0; 
+}
+
+/* Individual cart item styling */
+.cartItem {
+    display: flex; 
+    align-items: center; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+/* Hover effect for cart items */
+.cartItem:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* Styling for product images */
+.productImage {
+    width: 200px; 
+    height: auto; 
+    margin-right: 20px; 
+}
+
+/* Details container for each item */
+.itemDetails {
+    flex: 1; 
+}
+
+/* Item name styling */
+.itemName {
+    font-size: 18px; 
+    margin: 0; 
+}
+
+/* Item description styling */
+.itemDescription {
+    font-size: 14px; 
+    color: #777; 
+}
+
+/* Item price styling */
+.itemPrice {
+    font-weight: bold; 
+    font-size: 16px; 
+}
+
+/* Container for buttons */
+.buttonContainer {
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* Styling for quantity buttons */
+.quantityButton {
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    padding: 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-bottom: 5px; 
+    transition: background-color 0.3s; 
+}
+
+/* Hover effect for quantity buttons */
+.quantityButton:hover {
+    background-color: #0056b3; 
+}
+
+/* Disabled state for quantity buttons */
+.quantityButton:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed; 
+}
+
+/* Styling for remove buttons */
+.removeButton {
+    background-color: #dc3545; 
+    color: white; 
+    border: none; 
+    padding: 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+/* Hover effect for remove buttons */
+.removeButton:hover {
+    background-color: #c82333; 
+}
+
+/* Styling for total price display */
+.totalPrice {
+    font-size: 20px; 
+    font-weight: bold; 
+    text-align: right; 
+    margin-top: 20px; 
+}
+
+/* Styling for order button */
+.orderButton {
+    background-color: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    width: 100%; 
+    font-size: 18px; 
+    margin-top: 10px; 
+    transition: background-color 0.3s; 
+}
+
+/* Hover effect for order button */
+.orderButton:hover {
+    background-color: #218838; 
+}
+
+/* Slider styling */
+.slider {
+    width: 100%; 
+    height: 4px; 
+    background: #ddd; 
+    border-radius: 5px; 
+    margin: 20px 0; 
+}
+
+/* Slider thumb styling */
+.sliderThumb {
+    width: 20px; 
+    height: 20px; 
+    background: #007bff; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+/* Hover effect for slider thumb */
+.sliderThumb:hover {
+    background-color: #0056b3; 
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .cartItem {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .productImage {
+        width: 100%; 
+        max-width: 150px; 
+        margin-bottom: 10px; 
+    }
+
+    .itemDetails {
+        text-align: left; 
+    }
+
+    .title {
+        font-size: 24px; 
+    }
+
+    .totalPrice {
+        font-size: 18px; 
+    }
+
+    .orderButton {
+        font-size: 16px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 20px; 
+    }
+
+    .itemName {
+        font-size: 16px; 
+    }
+
+    .itemDescription {
+        font-size: 12px; 
+    }
+
+    .totalPrice {
+        font-size: 16px; 
+    }
+}

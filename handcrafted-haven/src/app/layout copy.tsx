@@ -34,16 +34,9 @@ export default function RootLayout({
       <head>
         <title>{`${pageTitle} | Handcrafted Haven`}</title>
         {/* Favicon */}
-        <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-        <link rel="icon" href="/images/favicon.png" type="image/png" sizes="32x32" />
-        <link rel="icon" href="/images/favicon.png" type="image/png" sizes="16x16" />
-        {/* Google Font */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" 
-          rel="stylesheet" 
-        />
+        <link rel="icon" href="/favicon.ico" type="image/icon" />
+        {/* If you're using a PNG favicon, use the following instead */}
+         <link rel="icon" href="/favicon.png" type="image/png" /> 
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <SearchProvider>

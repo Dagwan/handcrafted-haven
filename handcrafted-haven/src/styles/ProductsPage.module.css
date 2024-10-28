@@ -1,105 +1,96 @@
-/* styles/ProductsPage.module.css */
-
 .container {
   display: flex;
-  justify-content: flex-start; /* Align sidebar and content */
-  height: auto; /* Allow content height to adjust */
-  background-color: #f5f5f5; /* Light gray background */
+  justify-content: flex-start;
+  height: auto;
+  background-color: #f5f5f5;
+}
+
+.categorySidebar {
+  flex-shrink: 0; /* Keep sidebar visible on larger screens */
 }
 
 .content {
-  flex-grow: 1; /* Allow this section to grow and fill available space */
-  margin-left: 20px; /* Space between sidebar and content */
-  padding: 20px; /* Padding around content */
+  flex-grow: 2;
+  margin-left: 20px;
+  padding: 20px;
 }
 
 .productList {
-  list-style-type: none; /* Remove default list styling */
-  padding: 0; /* Remove padding */
+  list-style-type: none;
+  padding: 0;
 }
 
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
-  gap: 16px; /* Space between product cards */
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+  gap: 16px; /* Space between products */
 }
 
 .productCard {
-  border: 1px solid #ccc; /* Light border for product cards */
-  padding: 16px; /* Padding inside product cards */
-  border-radius: 4px; /* Rounded corners for product cards */
-  background-color: white; /* White background for product cards */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: white;
+  height: 100%;
+  align-items: center;
+  text-align: center;
 }
 
 .productImage {
-  max-width: 100%; /* Responsive image size */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
 }
 
-/* Button styles from previous CSS */
 .button {
-  padding: 8px; /* Reduced padding for smaller buttons */
+  padding: 10px 15px;
   background-color: #0070f3;
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: 14px; /* Smaller font size for buttons */
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .button:hover {
   background-color: #005bb5;
 }
 
-.button:disabled {
-  background-color: #ccc;
-}
-
-/* Styles for select element */
-.select {
-  padding: 8px; /* Padding for select element */
-  border-radius: 4px; /* Rounded corners */
-  border: 1px solid #ccc; /* Light border for select element */
-  font-size: 14px; /* Font size for select options */
-}
-
-/* Flex container for button and search filter */
-.buttonSearchContainer {
-  display: flex;
-  align-items: center; /* Center items vertically */
-  gap: 10px; /* Space between button and search filter */
-}
-
-.productCard {
-  display: flex;
-  flex-direction: column; /* Stack children vertically */
-  justify-content: space-between; /* Space between items */
-  border: 1px solid #ccc; /* Light border for product cards */
-  padding: 16px; /* Padding inside product cards */
-  border-radius: 4px; /* Rounded corners for product cards */
-  background-color: white; /* White background for product cards */
-  height: 100%; /* Ensure it takes full height of its container */
-}
-
 .buttonContainer {
-  margin-top: auto; /* Pushes the button container to the bottom */
+  margin-top: 10px;
 }
 
-/* Responsive Design Example (for smaller screens) */
-@media (max-width: 600px) {
-  .gridContainer {
-      grid-template-columns: repeat(1, 1fr); /* 1 column on small screens */
-      gap: 12px; /* Reduce gap on small screens */
+/* Responsive styles */
+@media (max-width: 576px) {
+  .categorySidebar {
+    display: none; /* Hide the category sidebar */
   }
 
   .content {
-      margin-left: 10px; /* Reduce margin on small screens */
-      padding: 10px; /* Adjust padding for smaller screens */
+    margin-left: 0; /* Remove left margin on small screens */
   }
 
-  .buttonSearchContainer {
-      flex-direction: column; /* Stack elements vertically on small screens */
-      align-items: flex-start; /* Align items to the start on small screens */
-      gap: 5px; /* Reduce gap when stacked vertically */
+  .gridContainer {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+    gap: 16px; /* Space between products */
+  }
+
+  .productCard {
+    margin-bottom: 16px; /* Add margin below each product card for spacing */
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+@media (min-width: 769px) {
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on larger screens */
   }
 }

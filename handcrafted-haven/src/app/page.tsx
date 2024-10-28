@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import RootLayout from './layout';
 import styles from '../styles/Home.module.css';
 
 
@@ -18,8 +20,8 @@ const Home: React.FC = () => {
     }, []);
 
     return (
-        <div className={styles.container}>
-          
+        <RootLayout pageTitle="Home">
+        <div className={styles.container}>    
 
             <main className={styles.main}>
                 <section className={styles.hero}>
@@ -28,7 +30,7 @@ const Home: React.FC = () => {
                     <p>Join our community of artisans and find one-of-a-kind treasures!</p>
                     <p>Support local craftspeople and bring home a piece of their passion.</p>
                     <p>Explore our curated selection and find the perfect gift for yourself or a loved one.</p>
-                    <button className={styles.ctaButton}>Shop Now</button>
+                    <Link href="/products"><button className={styles.ctaButton}>Check Out</button></Link>
                 </section>
 
                 <section className={styles.collectionSection}>
@@ -53,39 +55,39 @@ const Home: React.FC = () => {
                         <div className={styles.productCard}>
                             <img src="/images/product1.JPG" alt="Product 1" />
                             <h3>Handmade Wooden Bowl</h3>
-                            <p>$45.00</p>
-                            <button className={styles.ctaButton}>Add to Cart</button>
+                            <p>This beautifully handcrafted wooden bowl is made from high-quality, sustainably sourced wood. Its natural grain and smooth finish make it a perfect addition to any kitchen or dining table, ideal for serving salads, fruits, or as a decorative piece.</p>
+                            <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
                         </div>
                         <div className={styles.productCard}>
                             <img src="/images/product2.JPG" alt="Product 2" />
                             <h3>Woven Horse</h3>
-                            <p>$30.00</p>
-                            <button className={styles.ctaButton}>Add to Cart</button>
+                            <p>This intricately woven horse sculpture is crafted from natural fibers, showcasing traditional artisan techniques. Its unique texture and detailed design make it a charming decorative piece, perfect for adding a touch of rustic elegance to any space.</p>
+                            <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
                         </div>
                         <div className={styles.productCard}>
                             <img src="/images/product3.JPG" alt="Product 3" />
                             <h3>Ceramic Mug</h3>
-                            <p>$15.00</p>
-                            <button className={styles.ctaButton}>Add to Cart</button>
+                            <p>This handcrafted ceramic mug features a smooth, glazed finish and a comfortable handle, perfect for enjoying your favorite hot beverages. Its artisanal design and earthy tones add a touch of warmth and charm to your kitchen or coffee table.</p>
+                            <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
                         </div>
                         {/* New Products */}
                         <div className={styles.productCard}>
                             <img src="/images/product4.JPG" alt="Product 4" />
                             <h3>Knitted Scarf</h3>
-                            <p>$25.00</p>
-                            <button className={styles.ctaButton}>Add to Cart</button>
+                            <p>This cozy knitted scarf is crafted from soft, high-quality yarn, providing warmth and comfort during chilly days. Its classic design and versatile color make it a stylish accessory that complements any winter outfit.</p>
+                            <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
                         </div>
                         <div className={styles.productCard}>
                             <img src="/images/product5.JPG" alt="Product 5" />
                             <h3>Hand-Painted Canvas</h3>
-                            <p>$75.00</p>
-                            <button className={styles.ctaButton}>Add to Cart</button>
+                            <p>This hand-painted canvas showcases vibrant colors and intricate details, making it a captivating piece of art for any space. Each brushstroke reflects the artist's creativity, bringing a unique and personal touch to your home décor.</p>
+                            <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
                         </div>
                         <div className={styles.productCard}>
                             <img src="/images/product6.JPG" alt="Product 6" />
                             <h3>Eco-Friendly Tote Bag</h3>
-                            <p>$20.00</p>
-                            <button className={styles.ctaButton}>Add to Cart</button>
+                            <p>Crafted from sustainable materials, this eco-friendly tote bag is both stylish and practical. It's perfect for carrying your everyday essentials while reducing your environmental footprint, making it a great choice for conscious consumers.</p>
+                            <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
                         </div>
                     </div>
                 </section>
@@ -115,7 +117,7 @@ const Home: React.FC = () => {
                             <li>Support and resources to help you grow your craft.</li>
                             <li>Regular workshops and events to hone your skills.</li>
                         </ul>
-                        <button className={styles.ctaButton}>Learn More</button>
+                        <Link href="/products"><button className={styles.ctaButton}>Learn More</button></Link>
                     </div>
 
                     <div className={styles.callToAction2}>
@@ -128,7 +130,7 @@ const Home: React.FC = () => {
                             <li>Workshops to enhance your skills and business acumen.</li>
                             <li>Marketing support to increase your visibility.</li>
                         </ul>
-                        <button className={styles.ctaButton}>Become a Member</button>
+                        <Link href="/user"><button className={styles.ctaButton}>Become a Member</button></Link>
                     </div>
                 </section>
 
@@ -170,14 +172,14 @@ const Home: React.FC = () => {
                             <img src="/images/blog1.jpg" alt="Blog 1" className={styles.blogImage} />
                             <h3>5 Reasons to Support Local Artisans</h3>
                             <p>Discover the importance of supporting local craftspeople and how your purchases can make a significant difference in their lives. Supporting local artisans helps preserve traditional skills, boosts the local economy, and fosters a sense of community. By choosing handmade products, you not only acquire unique items but also contribute to the sustainability of local craftsmanship.</p>
-                            <button className={styles.readMoreButton}>Read More</button>
+                            <Link href="/user"><button className={styles.readMoreButton}>Read More</button></Link>
                         </div>
                         <span className={styles.separator}></span>
                         <div className={styles.blogCard}>
                             <img src="/images/blog2.jpg" alt="Blog 2" className={styles.blogImage} />
                             <h3>How to Care for Handmade Items</h3>
                             <p>Learn how to maintain the beauty and longevity of your handcrafted products with our expert tips. From proper cleaning techniques to storage solutions, we cover everything you need to know to ensure your handmade items remain in pristine condition. Understand the materials used in your products and how best to preserve their unique qualities, so you can enjoy them for years to come.</p>
-                            <button className={styles.readMoreButton}>Read More</button>
+                            <Link href="/user"><button className={styles.readMoreButton}>Read More</button></Link>
                         </div>
                     </div>
                 </section>
@@ -187,6 +189,7 @@ const Home: React.FC = () => {
 
             
         </div>
+        </RootLayout>
     );
 };
 

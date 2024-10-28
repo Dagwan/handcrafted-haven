@@ -1,0 +1,131 @@
+.createUser {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ede0d4;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+.createUser:hover {
+    transform: scale(1.02);
+}
+
+.createUser h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.inputGroup {
+    position: relative;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.inputGroup input,
+.inputGroup textarea,
+.inputGroup select {
+    width: 100%;
+    padding: 10px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus,
+.inputGroup select:focus {
+    border-color: #28a745;
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    color: #888;
+}
+
+.eyeIcon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #218838;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.success {
+    color: green;
+    text-align: center;
+}
+
+.loginPrompt {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.loginLink {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.loginLink:hover {
+    text-decoration: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .createUser {
+        padding: 10px;
+    }
+
+    .button {
+        padding: 10px;
+    }
+
+    .inputGroup input {
+        padding-left: 35px;
+    }
+
+    .icon {
+        padding-left: 10px;
+        font-size: 18px;
+    }
+    
+    .inputGroup textarea {
+        resize: none;
+        height: 80px; /* Set a fixed height for the textarea */
+    }
+
+    .inputGroup select {
+        padding-left: 10px; /* Adjust padding for select element */
+    }
+}

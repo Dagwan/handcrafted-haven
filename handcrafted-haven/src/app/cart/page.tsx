@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useContext } from 'react';
+import RootLayout from '../layout';
 import CartContext from '../../context/CartContext';
+import styles from '../../styles/Order.module.css';
 
 const CartPage = () => {
   const { state, dispatch } = useContext(CartContext);
@@ -22,39 +24,47 @@ const CartPage = () => {
   };
 
   const handleOrder = () => {
-    // You can perform order processing here, like sending data to an API
-    // For now, we'll just log the items and clear the cart as an example
-    console.log("Order placed with items:", state.items);
+    // Create a summary of items in the cart
+    const orderSummary = state.items.map(item => `${item.name} (x${item.quantity})`).join(', ');
+
+    // Show alert with order confirmation
+    alert(`Order placed with items: ${orderSummary}`);
     
     // Optionally clear the cart after ordering
     dispatch({ type: 'CLEAR_CART' });
   };
 
   return (
-    <div>
-      <h1>Shopping Cart</h1>
+    <RootLayout pageTitle="Cart Items">
+    <div className={styles.cartContainer}>
+      <h1 className={styles.title}>Shopping Cart</h1>
       {state.items.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p className={styles.emptyCartMessage}>Your cart is empty.</p>
       ) : (
         <>
-          <ul>
+          <ul className={styles.cartList}>
             {state.items.map(item => (
-              <li key={item.productId}>
-                <img src={item.image} alt={item.name} style={{ width: '100px' }} />
-                <h2>{item.name}</h2>
-                <p>{item.description}</p>
-                <p>${item.price} x {item.quantity}</p>
-                <button onClick={() => updateQuantity(item.productId, item.quantity + 1)}>+</button>
-                <button onClick={() => updateQuantity(item.productId, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
-                <button onClick={() => removeItem(item.productId)}>Remove</button>
+              <li key={item.productId} className={styles.cartItem}>
+                <img src={item.image} alt={item.name} className={styles.productImage} />
+                <div className={styles.itemDetails}>
+                  <h2 className={styles.itemName}>{item.name}</h2>
+                  <p className={styles.itemDescription}>{item.description}</p>
+                  <p className={styles.itemPrice}>${item.price} x {item.quantity}</p>
+                </div>
+                <div className={styles.buttonContainer}>
+                  <button className={styles.quantityButton} onClick={() => updateQuantity(item.productId, item.quantity + 1)}>+</button>
+                  <button className={styles.quantityButton} onClick={() => updateQuantity(item.productId, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
+                  <button className={styles.removeButton} onClick={() => removeItem(item.productId)}>Remove</button>
+                </div>
               </li>
             ))}
           </ul>
-          <p>Total: ${totalPrice.toFixed(2)}</p>
-          <button onClick={handleOrder}>Order</button>
+          <p className={styles.totalPrice}>Total: ${totalPrice.toFixed(2)}</p>
+          <button className={styles.orderButton} onClick={handleOrder}>Order</button>
         </>
       )}
     </div>
+    </RootLayout>
   );
 };
 

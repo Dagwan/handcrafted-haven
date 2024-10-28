@@ -1,0 +1,181 @@
+/* Container styles */
+.container {
+  padding: 16px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Title styles */
+.title {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+/* Details container layout */
+.detailsContainer {
+  display: flex;
+  margin-bottom: 32px;
+}
+
+/* Product image styles */
+.productImage {
+  width: 700px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 32px;
+  transition: transform 0.3s;
+}
+
+.productImage:hover {
+  transform: scale(1.05);
+}
+
+/* Information container styles */
+.infoContainer {
+  flex: 1;
+  max-width: 600px;
+}
+
+/* Description text styles */
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+/* Price text styles */
+.price {
+  font-size: 1.5rem;
+  color: #2d2d2d;
+  margin-bottom: 16px;
+}
+
+/* Stock information styles */
+.stock {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+/* Rating styles */
+.rating {
+  margin-bottom: 16px;
+  display: flex;
+}
+
+/* Add to cart button styles */
+.addToCartButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #0070f3;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addToCartButton:disabled {
+  background-color: #ccc;
+}
+
+/* Review title styles */
+.reviewTitle {
+  font-size: 1.5rem;
+  margin-top: 32px;
+}
+
+/* Review form styles */
+.reviewForm {
+  margin-bottom: 32px;
+}
+
+/* Label styles */
+.label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Input and textarea styles */
+.input,
+.textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Submit review button styles */
+.submitReviewButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Existing reviews title styles */
+.existingReviewsTitle {
+  font-size: 1.5rem;
+  margin-top: 32px;
+}
+
+/* Styles for the review list layout */
+.reviewList {
+  display: flex;
+  padding: 0;
+  overflow-x: auto;
+}
+
+/* Individual review item styles */
+.reviewItem {
+  margin-right: 16px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  min-width: 150px;
+  flex-shrink: 0;
+}
+
+/* Star rating styles */
+.filledStar {
+  color: gold;
+}
+
+.emptyStar {
+  color: lightgray;
+}
+
+/* Error message styles */
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .detailsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .productImage {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .infoContainer {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .price, .stock {
+    font-size: 1.2rem;
+  }
+}

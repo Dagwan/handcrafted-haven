@@ -1,221 +1,237 @@
-.aboutPage {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9; /* Light background for a clean look */
-}
-
-.aboutHeroSection {
-  text-align: center;
-  margin: 50px 0;
-}
-
-.aboutHeroSection h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  color: #333; /* Darker text for better readability */
-}
-
-.aboutHeroSection p {
-  font-size: 1.5rem;
+/* General Styles */
+.container {
+  max-width: 1200px;
   margin: 0 auto;
-  max-width: 800px;
-  color: #555; /* Softer text color */
+  padding: 20px;
 }
 
-.aboutSliderSection {
-  margin: 30px 0;
+.section {
+  padding: 2rem 0;
+  background-color: #f0f0f0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.aboutSliderImage {
-  margin-bottom: 20px;
-}
-
-.aboutMissionSection {
+.sectionTitle {
   text-align: center;
-  margin: 50px 0;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+  font-weight: bold;
 }
 
-.aboutMissionSection h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+/* About Section */
+.aboutPage {
+  background-color: #f9f9f9;
+}
+
+.aboutContent,
+.companyInfo {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sectionDesc {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.aboutLink {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.aboutLink:hover {
+  text-decoration: underline;
+}
+
+/* Team Section */
+.teamMember {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.teamMember:hover {
+  transform: translateY(-10px);
+}
+
+.teamMemberImg {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1rem;
+  position: relative;
+}
+
+.teamMemberImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.teamMemberImg:hover img {
+  transform: scale(1.1);
+}
+
+.teamMemberInfo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
   color: #333;
 }
 
-.aboutMissionSection p {
-  font-size: 1.25rem;
-  max-width: 900px;
+.teamMemberInfo p {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+/* Social Media Icons */
+.socialList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.socialList li {
+  display: inline-block;
+}
+
+.socialList li a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.socialList li a:hover {
+  transform: scale(1.2);
+}
+
+.social {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #eee;
+  padding: 5px;
+}
+
+/* Weather Section */
+.weather-section {
+  margin-bottom: 20px;
+}
+
+.mapContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  color: #666; /* Softer text color */
+  overflow: hidden;
 }
 
-.aboutProductListingsSection {
-  margin: 50px 0;
+.mapIframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
 }
 
-.aboutProductGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.weatherOverlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
-.aboutProductCard {
-  text-align: center;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #fff; /* White background for product cards */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  transition: transform 0.2s; /* Smooth scaling effect */
+.weatherOverlay h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.aboutProductCard:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
+.weatherOverlay p {
+  margin: 0;
+  font-size: 14px;
 }
 
-.aboutProductCard h3 {
-  font-size: 1.5rem;
-  margin: 10px 0;
-  color: #0070f3; /* Brand color for product titles */
-}
-
-.aboutProductCard p {
-  color: #777; /* Color for product descriptions */
-}
-
-.aboutRating {
-  margin-top: 10px;
-}
-
-.aboutReviewsSection {
-  margin: 50px 0;
-}
-
-.aboutReviewsList {
-  margin-bottom: 30px;
-}
-
-.aboutReviewItem {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  background-color: #f9f9f9; /* Soft background for review items */
-}
-
-.aboutReviewForm {
-  display: flex;
-  justify-content: center;
-}
-
-.aboutReviewInput {
-  padding: 10px;
-  width: 60%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 10px; /* Margin for better spacing */
-}
-
-.aboutSubmitButton {
-  padding: 10px 20px;
-  background-color: #0070f3;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s; /* Smooth transition for button */
-}
-
-.aboutSubmitButton:hover {
-  background-color: #005bb5; /* Darker shade on hover */
-}
-
-.aboutIconSection {
-  margin: 50px 0;
-}
-
-.aboutIconGrid {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.aboutIconCard {
-  text-align: center;
-  flex: 1; /* Flex property to allow icons to grow */
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-}
-
-.aboutIconCard:hover {
-  transform: translateY(-5px);
-}
-
-.aboutRotateIcon {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #0070f3; /* Brand color for icons */
-}
-
-.aboutCallToAction {
-  text-align: center;
-  margin: 50px 0;
-}
-
-.aboutCtaButton {
-  padding: 15px 30px;
-  background-color: #0070f3;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.aboutCtaButton:hover {
-  background-color: #005bb5;
-}
-
-/* Media Queries */
-@media (max-width: 1200px) {
-  .aboutProductGrid {
-    grid-template-columns: repeat(2, 1fr); /* 2 items on medium screens */
-  }
-
-  .aboutProductCard {
-    width: 100%; /* Full width on smaller screens */
-  }
-
-  .aboutReviewInput {
-    width: 70%; /* Wider input on smaller screens */
-  }
-
-  .aboutHeroSection h1 {
-    font-size: 2.5rem; /* Smaller font size on mobile */
-  }
-
-  .aboutHeroSection p,
-  .aboutMissionSection p {
-    font-size: 1rem; /* Smaller font size on mobile */
-  }
-}
-
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .aboutProductGrid {
-    grid-template-columns: 1fr; /* Single column on small screens */
+  .mapContainer {
+    max-width: 100%;
   }
 
-  .aboutHeroSection h1 {
-    font-size: 2rem; /* Further reduce font size */
+  .weatherOverlay {
+    top: 10px;
+    right: 10px;
+    width: calc(100% - 20px);
   }
 
-  .aboutHeroSection p,
-  .aboutMissionSection p {
-    font-size: 0.9rem; /* Further reduce font size */
+  .mapIframe {
+    height: 300px;
+  }
+}
+
+/* Media Queries for Team Section */
+@media (max-width: 992px) {
+  .teamMemberImg {
+    width: 120px;
+    height: 120px;
   }
 
-  .aboutReviewInput {
-    width: 80%; /* Wider input on smaller screens */
+  .teamMemberInfo h3 {
+    font-size: 1.3rem;
+  }
+
+  .teamMemberInfo p {
+    font-size: 0.9rem;
+  }
+
+  .social {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .teamMemberImg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .teamMemberInfo h3 {
+    font-size: 1.2rem;
+  }
+
+  .teamMemberInfo p {
+    font-size: 0.8rem;
+  }
+
+  .social {
+    width: 20px;
+    height: 20px;
   }
 }
