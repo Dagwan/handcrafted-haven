@@ -148,11 +148,12 @@ const Login = () => {
             setTimeout(() => {
                 router.push('/login');
             }, 3000);
-        } catch (err: unknown) {
+        } catch (err) {
+            // Check if 'err' is an instance of the Error class and has a message
             if (err instanceof Error) {
-                setResetMessage(err.message);
+                setError(err.message);
             } else {
-                setResetMessage('An unknown error occurred.');
+                setError('An unknown error occurred');
             }
         }
     };

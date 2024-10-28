@@ -1,9 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-// import { Row, Col } from 'react-bootstrap';
 import axios from 'axios';
-// import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBullseye, faBalanceScale, faEye } from '@fortawesome/free-solid-svg-icons';
 import RootLayout from '../layout';
@@ -11,6 +9,7 @@ import styles from '../../styles/About.module.css';
 
 const AboutUs: React.FC = () => {
     const [weather, setWeather] = useState<any>(null);
+    const [error, setError] = useState<string | null>(null); // Added error state
 
     useEffect(() => {
         // Fetch weather data from OpenWeather API
@@ -24,8 +23,13 @@ const AboutUs: React.FC = () => {
                     }
                 });
                 setWeather(response.data);
-            } catch (error) {
-                console.error('Error fetching weather data', error);
+            } catch (err) {
+                // Check if 'err' is an instance of the Error class and has a message
+                if (err instanceof Error) {
+                    setError(err.message);
+                } else {
+                    setError('An unknown error occurred');
+                }
             }
         };
         fetchWeather();
@@ -155,7 +159,6 @@ const AboutUs: React.FC = () => {
                     </div>
                 </section>
 
-
                 {/* Google Map Section */}
                 <section className={styles.section}>
                     <div className="container">
@@ -164,23 +167,31 @@ const AboutUs: React.FC = () => {
                             <div className={styles.mapIframe}>
                                 <iframe
                                     title="Google Map"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.114224256919!2d-118.24821928478377!3d34.04529248060784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c6e0f3b70f79%3A0x2b6be3c3a6f95c38!2s123%20Artisans%20Ln%2C%20Los%20Angeles%2C%20CA%2090002%2C%20USA!5e0!3m2!1sen!2sus!4v1694545403457!5m2!1sen!2sus"
-                                    width="1200"
-                                    height="450"
-                                    style={{ border: 0 }}
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.1142242569193!2d-118.24740678395657!3d34.04332296961173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c6a16b89e225%3A0x4e9c89702434d51c!2sThe%20Walt%20Disney%20Concert%20Hall!5e0!3m2!1sen!2sus!4v1628659203057!5m2!1sen!2sus"
+                                    width="100%"
+                                    height="350"
+                                    style={{ border: '0' }}
                                     allowFullScreen
                                     loading="lazy"
-                                ></iframe>
+                                />
                             </div>
-                            {/* Weather Information Overlay */}
-                            {weather && (
-                                <div className={`${styles.weatherOverlay}`}>
-                                    <h3>Current Weather in Los Angeles</h3>
-                                    <p>Temperature: {weather.main.temp} °C</p>
-                                    <p>Weather: {weather.weather[0].description}</p>
-                                </div>
-                            )}
                         </div>
+                    </div>
+                </section>
+
+                {/* Weather Section */}
+                <section className={styles.weatherSection}>
+                    <div className="container">
+                        <h2 className={styles.sectionTitle}>Current Weather</h2>
+                        {error ? (
+                            <p>Error: {error}</p> // Display error message
+                        ) : (
+                            weather ? (
+                                <p>{`Current Temperature in ${weather.name}: ${weather.main.temp} °C`}</p>
+                            ) : (
+                                <p>Loading weather data...</p>
+                            )
+                        )}
                     </div>
                 </section>
             </div>
