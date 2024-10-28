@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import RootLayout from './layout';
 import styles from '../styles/Home.module.css';
 
@@ -50,13 +51,19 @@ const Home: React.FC = () => {
                     </div>
 
                     <div className={styles.productGrid}>
-                        {/* Existing Products */}
-                        <div className={styles.productCard}>
-                            <img src="/images/product1.JPG" alt="Product 1" />
-                            <h3>Handmade Wooden Bowl</h3>
-                            <p>This beautifully handcrafted wooden bowl is made from high-quality, sustainably sourced wood. Its natural grain and smooth finish make it a perfect addition to any kitchen or dining table, ideal for serving salads, fruits, or as a decorative piece.</p>
-                            <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
-                        </div>
+                            {/* Existing Products */}
+                            <div className={styles.productCard}>
+                                <Image
+                                    src="/images/product1.JPG"
+                                    alt="Product 1"
+                                    width={300} // Set appropriate width
+                                    height={300} // Set appropriate height
+                                    objectFit="cover" // Maintain aspect ratio
+                                />
+                                <h3>Handmade Wooden Bowl</h3>
+                                <p>This beautifully handcrafted wooden bowl is made from high-quality, sustainably sourced wood. Its natural grain and smooth finish make it a perfect addition to any kitchen or dining table, ideal for serving salads, fruits, or as a decorative piece.</p>
+                                <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
+                            </div>
                         <div className={styles.productCard}>
                             <img src="/images/product2.JPG" alt="Product 2" />
                             <h3>Woven Horse</h3>
