@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import RootLayout from './layout';
+
 import styles from '../styles/Home.module.css';
 
 const Home: React.FC = () => {
@@ -20,7 +20,7 @@ const Home: React.FC = () => {
     }, []);
 
     return (
-        <RootLayout pageTitle="Home">
+        
         <div className={styles.container}>    
 
             <main className={styles.main}>
@@ -54,43 +54,43 @@ const Home: React.FC = () => {
                             {/* Existing Products */}
                             <div className={styles.productCard}>
                                 <Image
-                                    src="/images/product1.JPG"
+                                    src="/images/product1.jpg"
                                     alt="Product 1"
-                                    width={300} // Set appropriate width
-                                    height={300} // Set appropriate height
-                                    objectFit="cover" // Maintain aspect ratio
+                                    width={300}
+                                    height={300} 
+                                    objectFit="cover" 
                                 />
                                 <h3>Handmade Wooden Bowl</h3>
                                 <p>This beautifully handcrafted wooden bowl is made from high-quality, sustainably sourced wood. Its natural grain and smooth finish make it a perfect addition to any kitchen or dining table, ideal for serving salads, fruits, or as a decorative piece.</p>
                                 <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
                             </div>
                         <div className={styles.productCard}>
-                            <img src="/images/product2.JPG" alt="Product 2" />
+                            <img src="/images/product2.jpg" alt="Product 2" />
                             <h3>Woven Horse</h3>
                             <p>This intricately woven horse sculpture is crafted from natural fibers, showcasing traditional artisan techniques. Its unique texture and detailed design make it a charming decorative piece, perfect for adding a touch of rustic elegance to any space.</p>
                             <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
                         </div>
                         <div className={styles.productCard}>
-                            <img src="/images/product3.JPG" alt="Product 3" />
+                            <img src="/images/product3.jpg" alt="Product 3" />
                             <h3>Ceramic Mug</h3>
                             <p>This handcrafted ceramic mug features a smooth, glazed finish and a comfortable handle, perfect for enjoying your favorite hot beverages. Its artisanal design and earthy tones add a touch of warmth and charm to your kitchen or coffee table.</p>
                             <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
                         </div>
                         {/* New Products */}
                         <div className={styles.productCard}>
-                            <img src="/images/product4.JPG" alt="Product 4" />
+                            <img src="/images/product4.jpg" alt="Product 4" />
                             <h3>Knitted Scarf</h3>
                             <p>This cozy knitted scarf is crafted from soft, high-quality yarn, providing warmth and comfort during chilly days. Its classic design and versatile color make it a stylish accessory that complements any winter outfit.</p>
                             <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
                         </div>
                         <div className={styles.productCard}>
-                            <img src="/images/product5.JPG" alt="Product 5" />
+                            <img src="/images/product5.jpg" alt="Product 5" />
                             <h3>Hand-Painted Canvas</h3>
                             <p>This hand-painted canvas showcases vibrant colors and intricate details, making it a captivating piece of art for any space. Each brushstroke reflects the artist&rsquo;s creativity, bringing a unique and personal touch to your home d&eacute;cor.</p>
                             <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
                         </div>
                         <div className={styles.productCard}>
-                            <img src="/images/product6.JPG" alt="Product 6" />
+                            <img src="/images/product6.jpg" alt="Product 6" />
                             <h3>Eco-Friendly Tote Bag</h3>
                             <p>Crafted from sustainable materials, this eco-friendly tote bag is both stylish and practical. It&rsquo;s perfect for carrying your everyday essentials while reducing your environmental footprint, making it a great choice for conscious consumers.</p>
                             <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
@@ -166,7 +166,7 @@ const Home: React.FC = () => {
                 </section>
             </main>
         </div>
-        </RootLayout>
+        
     );
 };
 
@@ -227,7 +227,7 @@ export default Home;
 //                     <div className={styles.productGrid}>
 //                         {/* Existing Products */}
 //                         <div className={styles.productCard}>
-//                             <img src="/images/product1.JPG" alt="Product 1" />
+//                             <img src="/images/product1.jpg" alt="Product 1" />
 //                             <h3>Handmade Wooden Bowl</h3>
 //                             <p>This beautifully handcrafted wooden bowl is made from high-quality, sustainably sourced wood. Its natural grain and smooth finish make it a perfect addition to any kitchen or dining table, ideal for serving salads, fruits, or as a decorative piece.</p>
 //                             <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
