@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-
+import RootLayout from './layout';
 import styles from '../styles/Home.module.css';
 
 const Home: React.FC = () => {
@@ -20,7 +20,7 @@ const Home: React.FC = () => {
     }, []);
 
     return (
-        
+        <RootLayout pageTitle="Home">
         <div className={styles.container}>    
 
             <main className={styles.main}>
@@ -166,7 +166,7 @@ const Home: React.FC = () => {
                 </section>
             </main>
         </div>
-        
+        </RootLayout>
     );
 };
 

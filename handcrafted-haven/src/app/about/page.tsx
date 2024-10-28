@@ -106,7 +106,7 @@ interface WeatherData {
                             <div className={`${styles.col} col-md-4`}>
                                 <div className={styles.teamMember}>
                                     <div className={styles.teamMemberImg}>
-                                        <img src="/images/asidu.PNG" alt="Asiedu Isaac" />
+                                        <img src="/images/asidu.png" alt="Asiedu Isaac" />
                                     </div>
                                     <div className={styles.teamMemberInfo}>
                                         <h3>Asiedu, Isaac</h3>
@@ -114,7 +114,7 @@ interface WeatherData {
                                         <ul className={styles.socialList}>
                                             <li><a href="https://www.facebook.com/"><img src="/images/fb.png" alt="Facebook" className={styles.social} /></a></li>
                                             <li><a href="https://instagram.com/"><img src="/images/instagram.png" alt="Instagram" className={styles.social} /></a></li>
-                                            <li><a href="https://www.linkedin.com/"><img src="/images/linkIn.JPG" alt="LinkedIn" className={styles.social} /></a></li>
+                                            <li><a href="https://www.linkedin.com/"><img src="/images/linkIn.jpg" alt="LinkedIn" className={styles.social} /></a></li>
                                             <li><a href="https://x.com/" target='_blank' rel="noopener noreferrer"><img src="/images/x.png" alt="X" className={styles.social} /></a></li>
                                         </ul>
                                     </div>
@@ -124,7 +124,7 @@ interface WeatherData {
                             <div className={`${styles.col} col-md-4`}>
                                 <div className={styles.teamMember}>
                                     <div className={styles.teamMemberImg}>
-                                        <img src="/images/rodri.JPG" alt="Rodriguez Hector" />
+                                        <img src="/images/rodri.jpg" alt="Rodriguez Hector" />
                                     </div>
                                     <div className={styles.teamMemberInfo}>
                                         <h3>Rodriguez, Hector</h3>
@@ -132,7 +132,7 @@ interface WeatherData {
                                         <ul className={styles.socialList}>
                                             <li><a href="https://www.facebook.com/"><img src="/images/fb.png" alt="Facebook" className={styles.social} /></a></li>
                                             <li><a href="https://instagram.com/"><img src="/images/instagram.png" alt="Instagram" className={styles.social} /></a></li>
-                                            <li><a href="https://www.linkedin.com/"><img src="/images/linkIn.JPG" alt="LinkedIn" className={styles.social} /></a></li>
+                                            <li><a href="https://www.linkedin.com/"><img src="/images/linkIn.jpg" alt="LinkedIn" className={styles.social} /></a></li>
                                             <li><a href="https://x.com/" target='_blank' rel="noopener noreferrer"><img src="/images/x.png" alt="X" className={styles.social} /></a></li>
                                         </ul>
                                     </div>
@@ -142,7 +142,7 @@ interface WeatherData {
                             <div className={`${styles.col} col-md-4`}>
                                 <div className={styles.teamMember}>
                                     <div className={styles.teamMemberImg}>
-                                        <img src="/images/dagwan.JPG" alt="Danladi Dagwan" />
+                                        <img src="/images/dagwan.jpg" alt="Danladi Dagwan" />
                                     </div>
                                     <div className={styles.teamMemberInfo}>
                                         <h3>Danladi, Dagwan</h3>
@@ -150,7 +150,7 @@ interface WeatherData {
                                         <ul className={styles.socialList}>
                                             <li><a href="https://www.facebook.com/"><img src="/images/fb.png" alt="Facebook" className={styles.social} /></a></li>
                                             <li><a href="https://instagram.com/"><img src="/images/instagram.png" alt="Instagram" className={styles.social} /></a></li>
-                                            <li><a href="https://www.linkedin.com/"><img src="/images/linkIn.JPG" alt="LinkedIn" className={styles.social} /></a></li>
+                                            <li><a href="https://www.linkedin.com/"><img src="/images/linkIn.jpg" alt="LinkedIn" className={styles.social} /></a></li>
                                             <li><a href="https://x.com/" target='_blank' rel="noopener noreferrer"><img src="/images/x.png" alt="X" className={styles.social} /></a></li>
                                         </ul>
                                     </div>
