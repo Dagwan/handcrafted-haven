@@ -50,10 +50,10 @@ const Footer = () => {
                         <div className={styles.socialColumn}>
                             <h3>Connect</h3>
                             <ul>
-                                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="/images/fb.PNG" alt="facebook" className={styles.social} /></a></li>
-                                <li><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"><img src="/images/instagram.PNG" alt="instagram" className={styles.social} /></a></li>
-                                <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><img src="/images/linkIn.JPG" alt="linkedin" className={styles.social} /></a></li>
-                                <li><a href="https://x.com/" target="_blank" rel="noopener noreferrer"><img src="/images/x.PNG" alt="x" className={styles.social} /></a></li>
+                                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="/images/fb.png" alt="facebook" className={styles.social} /></a></li>
+                                <li><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"><img src="/images/instagram.png" alt="instagram" className={styles.social} /></a></li>
+                                <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><img src="/images/linkIn.jpg" alt="linkedin" className={styles.social} /></a></li>
+                                <li><a href="https://x.com/" target="_blank" rel="noopener noreferrer"><img src="/images/x.png" alt="x" className={styles.social} /></a></li>
                             </ul>
                         </div>
                         <ul className={styles.connectList}>
