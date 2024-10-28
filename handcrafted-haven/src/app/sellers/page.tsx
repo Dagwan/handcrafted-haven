@@ -65,10 +65,10 @@ const CreateSellerProfile = () => {
 
             setSuccess('Seller profile created successfully! Redirecting...');
             setTimeout(() => {
-                router.push('/dashboard'); // Redirect to the dashboard or any other appropriate page
+                router.push('/login'); // Redirect to the dashboard or any other appropriate page
             }, 2000);
-        } catch (err) {
-            setError(error.message);
+        } catch (err: any) {
+            setError(err.message ? err.message : 'Failed to create seller profile');
         }
     };
 
