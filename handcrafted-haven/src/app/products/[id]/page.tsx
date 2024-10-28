@@ -53,9 +53,7 @@ const ProductDetailsPage = () => {
     };
 
     fetchProduct();
-  }, [id]);
-
-  
+  }, [id]);  
 
   const addToCart = () => {
     if (product) {
@@ -66,8 +64,8 @@ const ProductDetailsPage = () => {
           name: product.title,
           price: product.price,
           quantity: 1, 
-          image: product.imageUrl, 
-          description: product.description, 
+          image: product.imageUrl || '', 
+          description: product.description,
         },
       });
       alert(`${product.title} has been added to your cart!`);
