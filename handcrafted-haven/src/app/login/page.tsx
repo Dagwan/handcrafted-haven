@@ -84,12 +84,8 @@ const Login = () => {
 
             setError('');
             window.location.href = '/sellers/dashboard';
-        } catch (err: unknown) {
-            if (err instanceof Error) {
-                setError(err.message);
-            } else {
-                setError('An unknown error occurred.');
-            }
+        } catch (err: any) {
+            setError(err.message);
         }
     };
 
@@ -113,12 +109,8 @@ const Login = () => {
             setResetMessage(`Password reset link sent to: ${forgotPasswordEmail}`);
             setShowForgotPassword(false);
             setShowResetForm(true);
-        } catch (err: unknown) {
-            if (err instanceof Error) {
-                setResetMessage(err.message);
-            } else {
-                setResetMessage('An unknown error occurred.');
-            }
+        } catch (err: any) {
+            setResetMessage(err.message);
         }
     };
 
@@ -139,22 +131,20 @@ const Login = () => {
                 throw new Error(data.message || 'Failed to reset password');
             }
 
+            // Set success message
             setResetMessage('Password changed successfully.');
 
+            // Clear fields
             setToken('');
             setNewPassword('');
             setConfirmPassword('');
 
+            // Redirect to login page after 3 seconds
             setTimeout(() => {
                 router.push('/login');
-            }, 3000);
-        } catch (err) {
-            // Check if 'err' is an instance of the Error class and has a message
-            if (err instanceof Error) {
-                setError(err.message);
-            } else {
-                setError('An unknown error occurred');
-            }
+            }, 3000); // 3 seconds
+        } catch (err: any) {
+            setResetMessage(err.message);
         }
     };
 
@@ -194,7 +184,7 @@ const Login = () => {
                     <div className={styles.popup}>
                         <div className={styles.popupContent}>
                             <h2>Reset Password</h2>
-                            <p>Enter your email address to receive a password reset token.&apos;</p>
+                            <p>Enter your email address to receive a password reset token.</p>
                             <div className={styles.inputGroup}>
                                 <AiOutlineMail className={styles.icon} />
                                 <input
@@ -248,8 +238,8 @@ const Login = () => {
                                 />
                             </div>
                             <button onClick={handleResetPassword} className={styles.popupButton}>Reset Password</button>
-                            {resetMessage && <p className={styles.resetMessage}>{resetMessage}</p>}
                             <p className={styles.closePopup} onClick={() => setShowResetForm(false)}>Close</p>
+                            {resetMessage && <p className={styles.resetMessage}>{resetMessage}</p>}
                         </div>
                     </div>
                 )}

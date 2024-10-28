@@ -20,8 +20,7 @@ const Home: React.FC = () => {
 
     return (
         <RootLayout pageTitle="Home">
-            <div className={styles.container}>    
-
+            <div className={styles.container}>
                 <main className={styles.main}>
                     <section className={styles.hero}>
                         <h1>Welcome to Handcrafted Haven</h1>
@@ -101,7 +100,6 @@ const Home: React.FC = () => {
                             <li>Enjoy customizable items designed to suit your personal style and preferences, making your purchase truly unique.</li>
                             <li>A portion of every sale goes to community projects, contributing to the betterment of local neighborhoods and initiatives.</li>
                         </ul>
-
                     </section>
 
                     <section className={styles.callToActionContainer}>
@@ -141,16 +139,20 @@ const Home: React.FC = () => {
                                 <p>- Sarah K.</p>
                             </div>
                             <div className={styles.testimonialCard}>
-                                <p>&quot;The quality of the products is exceptional. I&apos;ll definitely be back for more!&quot;</p>
+                                <p>"The quality of the products is exceptional. I&apos;ll definitely be back for more!"</p>
                                 <p>- John D.</p>
                             </div>
                             <div className={styles.testimonialCard}>
-                                <p>&quot;Each piece I've bought tells a unique story. I&apos;m proud to support local artisans!&quot;</p>
+                                <p>"Each piece I've bought tells a unique story. I&apos;m proud to support local artisans!"</p>
                                 <p>- Emily R.</p>
                             </div>
                             <div className={styles.testimonialCard}>
-                                <p>&quot;I purchased a beautiful hand-painted canvas for my living room, and it&apos;s a conversation starter!&quot;</p>
-                                <p>- Alex M.</p>
+                                <p>"I purchased a beautiful handwoven rug, and it&apos;s perfect for my living room."</p>
+                                <p>- Michael B.</p>
+                            </div>
+                            <div className={styles.testimonialCard}>
+                                <p>"The customer service is fantastic, and the products are always top-notch!"</p>
+                                <p>- Lisa T.</p>
                             </div>
                         </div>
                     </section>
