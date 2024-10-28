@@ -1,9 +1,8 @@
-'use client';
+'use client'; 
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useSearch } from '../../context/SearchContext';
 import SearchFilter from '../../components/SearchFilter';
 import PaginationControls from '../../components/PaginationControls';
@@ -44,7 +43,7 @@ const ProductsPage = () => {
             : 'https://handcrafted-haven-api.onrender.com/products'
         );
         setProducts(response.data);
-      } catch {
+      } catch (err) {
         setError('Failed to load products.');
       } finally {
         setLoading(false);
@@ -72,54 +71,48 @@ const ProductsPage = () => {
 
   return (
     <RootLayout pageTitle="Products">
-      <div className={styles.container}>
-        <div className={styles.categorySidebar}>
-          <CategorySidebar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-        </div>
-
-        <div className={styles.content}>
-          <h1>Products</h1>
-
-          <div className={styles.buttonSearchContainer}>
-            <Link href="/products/add">
-              <button className={styles.button}>Add New Product</button>
-            </Link>
-            <SearchFilter sortOption={sortOption} setSortOption={setSortOption} />
-          </div>
-
-          <div className={styles.gridContainer}>
-            {currentProducts.map(product => (
-              <div key={product._id} className={styles.productCard}>
-                {product.imageUrl && (
-                  <Image 
-                      src={product.imageUrl}
-                      alt={product.title}
-                      className={styles.productImage}
-                      width={300} // Set appropriate width
-                      height={300} // Set appropriate height
-                      priority // Optionally set priority to true for important images
-                  />
-                )}
-                <h2>{product.title}</h2>
-                <p>{product.description}</p>
-                <p>Price: ${product.price}</p>
-                <p>Stock: {product.stockQuantity}</p>
-                <div className={styles.buttonContainer}>
-                  <Link href={`/products/${product._id}`}>
-                    <button className={`${styles.button} ${styles.viewButton}`}>View Details</button>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <PaginationControls
-            totalPages={totalPages}
-            currentPage={currentPage}
-            handlePageChange={handlePageChange}
-          />
-        </div>
+    <div className={styles.container}>
+      <div className={styles.categorySidebar}>
+        <CategorySidebar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
       </div>
+
+      <div className={styles.content}>
+        <h1>Products</h1>
+
+        <div className={styles.buttonSearchContainer}>
+          <Link href="/products/add">
+            <button className={styles.button}>Add New Product</button>
+          </Link>
+          <SearchFilter sortOption={sortOption} setSortOption={setSortOption} />
+        </div>
+
+        {/* Change ul to div */}
+        <div className={styles.gridContainer}>
+          {currentProducts.map(product => (
+            <div key={product._id} className={styles.productCard}>
+              {product.imageUrl && (
+                <img src={product.imageUrl} alt={product.title} className={styles.productImage} />
+              )}
+              <h2>{product.title}</h2>
+              <p>{product.description}</p>
+              <p>Price: ${product.price}</p>
+              <p>Stock: {product.stockQuantity}</p>
+              <div className={styles.buttonContainer}>
+                <Link href={`/products/${product._id}`}>
+                  <button className={`${styles.button} ${styles.viewButton}`}>View Details</button>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <PaginationControls
+          totalPages={totalPages}
+          currentPage={currentPage}
+          handlePageChange={handlePageChange}
+        />
+      </div>
+    </div>
     </RootLayout>
   );
 };
