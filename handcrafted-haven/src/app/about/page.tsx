@@ -9,26 +9,31 @@ import { faBullseye, faBalanceScale, faEye } from '@fortawesome/free-solid-svg-i
 import RootLayout from '../layout';
 import styles from '../../styles/About.module.css';
 
-const AboutUs: React.FC = () => {
-    const [weather, setWeather] = useState<any>(null);
-
+interface WeatherData {
+    main: { temp: number };
+    weather: [{ description: string }];
+  }
+  
+  const AboutUs: React.FC = () => {
+    const [weather, setWeather] = useState<WeatherData | null>(null);
+  
     useEffect(() => {
-        // Fetch weather data from OpenWeather API
-        const fetchWeather = async () => {
-            try {
-                const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
-                    params: {
-                        q: 'Los Angeles, USA',
-                        appid: '60e235e16fea773d9638123ad7f4420b',
-                        units: 'metric'
-                    }
-                });
-                setWeather(response.data);
-            } catch (error) {
-                console.error('Error fetching weather data', error);
+      const fetchWeather = async () => {
+        try {
+          const response = await axios.get('https://api.openweathermap.org/data/2.5/weather',   
+   {
+            params: {
+              q: 'Los Angeles, USA',
+              appid: '60e235e16fea773d9638123ad7f4420b',
+              units: 'metric'
             }
-        };
-        fetchWeather();
+          });
+          setWeather(response.data);
+        } catch (error) {
+          console.error('Error fetching weather data', error);
+        }
+      };
+      fetchWeather();
     }, []);
 
     return (
