@@ -80,13 +80,13 @@ const Home: React.FC = () => {
                         <div className={styles.productCard}>
                             <img src="/images/product5.JPG" alt="Product 5" />
                             <h3>Hand-Painted Canvas</h3>
-                            <p>This hand-painted canvas showcases vibrant colors and intricate details, making it a captivating piece of art for any space. Each brushstroke reflects the artist's creativity, bringing a unique and personal touch to your home décor.</p>
+                            <p>This hand-painted canvas showcases vibrant colors and intricate details, making it a captivating piece of art for any space. Each brushstroke reflects the artist&apos;s creativity, bringing a unique and personal touch to your home décor.</p>
                             <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
                         </div>
                         <div className={styles.productCard}>
                             <img src="/images/product6.JPG" alt="Product 6" />
                             <h3>Eco-Friendly Tote Bag</h3>
-                            <p>Crafted from sustainable materials, this eco-friendly tote bag is both stylish and practical. It's perfect for carrying your everyday essentials while reducing your environmental footprint, making it a great choice for conscious consumers.</p>
+                            <p>Crafted from sustainable materials, this eco-friendly tote bag is both stylish and practical. It&apos;s perfect for carrying your everyday essentials while reducing your environmental footprint, making it a great choice for conscious consumers.</p>
                             <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
                         </div>
                     </div>
@@ -109,7 +109,7 @@ const Home: React.FC = () => {
                     <div className={styles.callToAction1}>
                         <h2>Join Our Artisan Community!</h2>
                         <p>Become a part of Handcrafted Haven and showcase your unique creations.</p>
-                        <p>As a member, you'll enjoy:</p>
+                        <p>As a member, you&apos;ll enjoy:</p>
                         <ul>
                             <li>Access to a vibrant marketplace for your handmade products.</li>
                             <li>Networking opportunities with fellow artisans and creators.</li>
@@ -138,19 +138,20 @@ const Home: React.FC = () => {
                     <h2>What Our Customers Say</h2>
                     <div className={styles.testimonialGrid}>
                         <div className={styles.testimonialCard}>
-                            <p>"I love my handmade wooden bowl! It's a beautiful addition to my kitchen."</p>
+                        <p>&quot;I love my handmade wooden bowl! It&apos;s a beautiful addition to my kitchen.&quot;</p>
+
                             <p>- Sarah K.</p>
                         </div>
                         <div className={styles.testimonialCard}>
-                            <p>"The quality of the products is exceptional. I'll definitely be back for more!"</p>
+                            <p>"The quality of the products is exceptional. I&apos;ll definitely be back for more!"</p>
                             <p>- John D.</p>
                         </div>
                         <div className={styles.testimonialCard}>
-                            <p>"Each piece I've bought tells a unique story. I'm proud to support local artisans!"</p>
+                            <p>"Each piece I've bought tells a unique story. I&apos;m proud to support local artisans!"</p>
                             <p>- Emily R.</p>
                         </div>
                         <div className={styles.testimonialCard}>
-                            <p>"I purchased a beautiful handwoven rug, and it's perfect for my living room."</p>
+                            <p>"I purchased a beautiful handwoven rug, and it&apos;s perfect for my living room."</p>
                             <p>- Michael B.</p>
                         </div>
                         <div className={styles.testimonialCard}>
@@ -158,7 +159,7 @@ const Home: React.FC = () => {
                             <p>- Jessica L.</p>
                         </div>
                         <div className={styles.testimonialCard}>
-                            <p>"I can't get enough of the handcrafted jewelry. Each piece is stunning!"</p>
+                            <p>"I can&apos;t get enough of the handcrafted jewelry. Each piece is stunning!"</p>
                             <p>- David M.</p>
                         </div>
                     </div>

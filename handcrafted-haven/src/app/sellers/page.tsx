@@ -4,13 +4,13 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import RootLayout from '../layout';
 import styles from '../../styles/CreateUser.module.css';
-import { AiOutlineUser, AiOutlineMail, AiOutlineLock, AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+// import { AiOutlineUser, AiOutlineMail, AiOutlineLock, AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
 const CreateSellerProfile = () => {
     const [phone, setPhone] = useState('');
     const [dob, setDob] = useState('');
     const [gender, setGender] = useState('');
-    const [userId, setUserId] = useState(''); // This will store the ID of the user who is creating the seller profile
+    const [userId, setUserId] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const router = useRouter();
@@ -32,7 +32,7 @@ const CreateSellerProfile = () => {
         return null;
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setSuccess('');
 
@@ -48,13 +48,13 @@ const CreateSellerProfile = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer 88b46adbd509babaaddce1b50ff2140f168c1228db0d49dfabc91fadb4304d39`, // Ensure to include a valid JWT token for authentication
+                    'Authorization': `Bearer 88b46adbd509babaaddce1b50ff2140f168c1228db0d49dfabc91fadb4304d39`, // Include a valid JWT token for authentication
                 },
                 body: JSON.stringify({
                     phone,
                     dob,
                     gender,
-                    userId, // Include the user ID for the seller profile
+                    userId,
                 }),
             });
 
@@ -65,10 +65,15 @@ const CreateSellerProfile = () => {
 
             setSuccess('Seller profile created successfully! Redirecting...');
             setTimeout(() => {
-                router.push('/dashboard'); // Redirect to the dashboard or any other appropriate page
+                router.push('/dashboard');
             }, 2000);
         } catch (err) {
-            setError(error.message);
+            // Check if 'err' is an instance of the Error class and has a message
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError('An unknown error occurred');
+            }
         }
     };
 

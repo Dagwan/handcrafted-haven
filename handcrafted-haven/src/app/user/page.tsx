@@ -94,111 +94,116 @@ const CreateUser = () => {
             setTimeout(() => {
                 router.push('/login');
             }, 2000);
-        } catch (err: any) {
-            setError(err.message);        }
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError('An unexpected error occurred.');
+            }
+        }
     };
 
     return (
         <RootLayout pageTitle="Create Account">
-        <div className={styles.createUser}>
-            <h2>Create User Profile</h2>
-            <p>Please fill out the form below to create your user account. Make sure to provide a valid email address and a secure password. Once registered, you will be able to log in and access your profile.</p>
-            <form onSubmit={handleSubmit}>
-                <div className={styles.inputGroup}>
-                    <AiOutlineUser className={styles.icon} />
-                    <input
-                        type="text"
-                        placeholder="Name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className={styles.inputGroup}>
-                    <AiOutlineUser className={styles.icon} />
-                    <input
-                        type="text"
-                        placeholder="Username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className={styles.inputGroup}>
-                    <AiOutlineMail className={styles.icon} />
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className={styles.inputGroup}>
-                    <AiOutlineLock className={styles.icon} />
-                    <input
-                        type={showPassword ? 'text' : 'password'}
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                    {showPassword ? (
-                        <AiOutlineEyeInvisible className={styles.eyeIcon} onClick={() => setShowPassword(false)} />
-                    ) : (
-                        <AiOutlineEye className={styles.eyeIcon} onClick={() => setShowPassword(true)} />
-                    )}
-                </div>
-                <div className={styles.inputGroup}>
-                    <AiOutlineLock className={styles.icon} />
-                    <input
-                        type={showConfirmPassword ? 'text' : 'password'}
-                        placeholder="Confirm Password"
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                        required
-                    />
-                    {showConfirmPassword ? (
-                        <AiOutlineEyeInvisible className={styles.eyeIcon} onClick={() => setShowConfirmPassword(false)} />
-                    ) : (
-                        <AiOutlineEye className={styles.eyeIcon} onClick={() => setShowConfirmPassword(true)} />
-                    )}
-                </div>
-                <div className={styles.inputGroup}>
-                    <select value={userType} onChange={(e) => setUserType(e.target.value)}>
-                        <option value="buyer">Buyer</option>
-                        <option value="seller">Seller</option>
-                    </select>
-                </div>
-                <div className={styles.inputGroup}>
-                    <input
-                        type="text"
-                        placeholder="Profile Picture URL (Optional)"
-                        value={profilePicture}
-                        onChange={(e) => setProfilePicture(e.target.value)}
-                    />
-                </div>
-                <div className={styles.inputGroup}>
-                    <textarea
-                        placeholder="Bio"
-                        value={bio}
-                        onChange={(e) => setBio(e.target.value)}
-                    ></textarea>
-                </div>
-                <div className={styles.inputGroup}>
-                    <input
-                        type="text"
-                        placeholder="Address"
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}
-                    />
-                </div>
-                <button className={styles.button} type="submit">Create Account</button>
-                {error && <p className={styles.error}>{error}</p>}
-                {success && <p className={styles.success}>{success}</p>}
-            </form>
-            <p className={styles.loginPrompt}>Already have an account? <span onClick={() => router.push('/login')} className={styles.loginLink}>Login</span></p>
-        </div>
+            <div className={styles.createUser}>
+                <h2>Create User Profile</h2>
+                <p>Please fill out the form below to create your user account. Make sure to provide a valid email address and a secure password. Once registered, you will be able to log in and access your profile.</p>
+                <form onSubmit={handleSubmit}>
+                    <div className={styles.inputGroup}>
+                        <AiOutlineUser className={styles.icon} />
+                        <input
+                            type="text"
+                            placeholder="Name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <AiOutlineUser className={styles.icon} />
+                        <input
+                            type="text"
+                            placeholder="Username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <AiOutlineMail className={styles.icon} />
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <AiOutlineLock className={styles.icon} />
+                        <input
+                            type={showPassword ? 'text' : 'password'}
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                        {showPassword ? (
+                            <AiOutlineEyeInvisible className={styles.eyeIcon} onClick={() => setShowPassword(false)} />
+                        ) : (
+                            <AiOutlineEye className={styles.eyeIcon} onClick={() => setShowPassword(true)} />
+                        )}
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <AiOutlineLock className={styles.icon} />
+                        <input
+                            type={showConfirmPassword ? 'text' : 'password'}
+                            placeholder="Confirm Password"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            required
+                        />
+                        {showConfirmPassword ? (
+                            <AiOutlineEyeInvisible className={styles.eyeIcon} onClick={() => setShowConfirmPassword(false)} />
+                        ) : (
+                            <AiOutlineEye className={styles.eyeIcon} onClick={() => setShowConfirmPassword(true)} />
+                        )}
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <select value={userType} onChange={(e) => setUserType(e.target.value)}>
+                            <option value="buyer">Buyer</option>
+                            <option value="seller">Seller</option>
+                        </select>
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <input
+                            type="text"
+                            placeholder="Profile Picture URL (Optional)"
+                            value={profilePicture}
+                            onChange={(e) => setProfilePicture(e.target.value)}
+                        />
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <textarea
+                            placeholder="Bio"
+                            value={bio}
+                            onChange={(e) => setBio(e.target.value)}
+                        ></textarea>
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <input
+                            type="text"
+                            placeholder="Address"
+                            value={address}
+                            onChange={(e) => setAddress(e.target.value)}
+                        />
+                    </div>
+                    <button className={styles.button} type="submit">Create Account</button>
+                    {error && <p className={styles.error}>{error}</p>}
+                    {success && <p className={styles.success}>{success}</p>}
+                </form>
+                <p className={styles.loginPrompt}>Already have an account? <span onClick={() => router.push('/login')} className={styles.loginLink}>Login</span></p>
+            </div>
         </RootLayout>
     );
 };
