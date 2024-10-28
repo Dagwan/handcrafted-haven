@@ -42,8 +42,13 @@ const AddProductPage = () => {
         // Handle errors
         console.error('Error:', data);
       }
-    } catch (error: any) {
-      console.error('An error occurred:', error);
+    } catch (error: unknown) {
+      // Type narrowing to check if the error is an instance of Error
+      if (error instanceof Error) {
+        console.error('An error occurred:', error.message);
+      } else {
+        console.error('An unknown error occurred');
+      }
     }
   };
 
@@ -101,6 +106,7 @@ const AddProductPage = () => {
 };
 
 export default AddProductPage;
+
 
 // // src/app/products/add/page.tsx
 // 'use client';
