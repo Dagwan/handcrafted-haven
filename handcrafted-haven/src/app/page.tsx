@@ -161,6 +161,28 @@ const Home: React.FC = () => {
                             <p>&ldquo;The customer service was fantastic, and the products arrived quickly.&rdquo;</p>
                             <p>- Lisa T.</p>
                         </div>
+                        <div className={styles.testimonialCard}>
+                            <p>&ldquo;I can not get enough of the handcrafted jewelry. Each piece is stunning!&rdquo;</p>
+                            <p>- David M.</p>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.blogSection}>
+                    <h2>Latest Blog Posts</h2>
+                    <div className={styles.blogGrid}>
+                        <div className={styles.blogCard}>
+                            <img src="/images/blog1.jpg" alt="Blog 1" className={styles.blogImage} />
+                            <h3>5 Reasons to Support Local Artisans</h3>
+                            <p>Discover the importance of supporting local craftspeople and how your purchases can make a significant difference in their lives. Supporting local artisans helps preserve traditional skills, boosts the local economy, and fosters a sense of community. By choosing handmade products, you not only acquire unique items but also contribute to the sustainability of local craftsmanship.</p>
+                            <Link href="/user"><button className={styles.readMoreButton}>Read More</button></Link>
+                        </div>
+                        <span className={styles.separator}></span>
+                        <div className={styles.blogCard}>
+                            <img src="/images/blog2.jpg" alt="Blog 2" className={styles.blogImage} />
+                            <h3>How to Care for Handmade Items</h3>
+                            <p>Learn how to maintain the beauty and longevity of your handcrafted products with our expert tips. From proper cleaning techniques to storage solutions, we cover everything you need to know to ensure your handmade items remain in pristine condition. Understand the materials used in your products and how best to preserve their unique qualities, so you can enjoy them for years to come.</p>
+                            <Link href="/user"><button className={styles.readMoreButton}>Read More</button></Link>
+                        </div>
                     </div>
                 </section>
             </main>
@@ -226,7 +248,7 @@ export default Home;
 //                     <div className={styles.productGrid}>
 //                         {/* Existing Products */}
 //                         <div className={styles.productCard}>
-//                             <img src="/images/product1.jpg" alt="Product 1" />
+//                             <img src="/images/product1.JPG" alt="Product 1" />
 //                             <h3>Handmade Wooden Bowl</h3>
 //                             <p>This beautifully handcrafted wooden bowl is made from high-quality, sustainably sourced wood. Its natural grain and smooth finish make it a perfect addition to any kitchen or dining table, ideal for serving salads, fruits, or as a decorative piece.</p>
 //                             <Link href="/products"><button className={styles.ctaButton}>Shop Now</button></Link>
