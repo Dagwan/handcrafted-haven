@@ -25,7 +25,7 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ selectedCategory, set
         const response = await axios.get('https://handcrafted-haven-api.onrender.com/categories');
         setCategories(response.data);
       } catch (err) {
-        console.error('Error fetching categories:', err); // Log the error to the console
+        console.error('Error fetching categories:', err);
         setError('Failed to load categories.');
       } finally {
         setLoading(false);
@@ -51,8 +51,8 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ selectedCategory, set
         {categories.map(category => (
           <li
             key={category._id}
-            onClick={() => setSelectedCategory(category._id)}
-            className={`${styles.categoryItem} ${selectedCategory === category._id ? styles.selected : ''}`}
+            onClick={() => setSelectedCategory(category.name)} // Change to set category name
+            className={`${styles.categoryItem} ${selectedCategory === category.name ? styles.selected : ''}`} // Update to match category name
           >
             {category.name}
           </li>
