@@ -3,12 +3,12 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Link from 'next/link'; 
+import Link from 'next/link';
 import { useSearch } from '../../context/SearchContext';
 import SearchFilter from '../../components/SearchFilter';
 import PaginationControls from '../../components/PaginationControls';
-import CategorySidebar from '../../components/CategorySidebar'; 
-import { sortProducts } from '../../utils/SortProducts'; 
+import CategorySidebar from '../../components/CategorySidebar';
+import { sortProducts } from '../../utils/SortProducts';
 import styles from "../../styles/ProductsPage.module.css";
 
 interface Product {
@@ -28,7 +28,7 @@ const ProductsPage = () => {
   const [error, setError] = useState<string | null>(null);
   const [sortOption, setSortOption] = useState<string>('newest');
   const { searchQuery } = useSearch();
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null); 
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -40,12 +40,13 @@ const ProductsPage = () => {
         setLoading(true);
         // If a category is selected, filter products by category ID
         const response = await axios.get(
-          selectedCategory 
-            ? `https://handcrafted-haven-api.onrender.com/products?categoryId=${selectedCategory}` 
+          selectedCategory
+            ? `https://handcrafted-haven-api.onrender.com/products?categoryId=${selectedCategory}`
             : 'https://handcrafted-haven-api.onrender.com/products'
         );
         setProducts(response.data);
       } catch (err) {
+        console.error(err);
         setError('Failed to load products.');
       } finally {
         setLoading(false);
@@ -59,7 +60,7 @@ const ProductsPage = () => {
   if (error) return <p>{error}</p>;
 
   // Filter products based on search query
-  const filteredProducts = sortProducts(products, sortOption).filter(product => 
+  const filteredProducts = sortProducts(products, sortOption).filter(product =>
     product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
     product.price.toString().includes(searchQuery)
@@ -77,7 +78,7 @@ const ProductsPage = () => {
   };
 
   return (
-    
+
     <div className={styles.container}>
       <div className={styles.categorySidebar}>
         <CategorySidebar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
@@ -120,7 +121,7 @@ const ProductsPage = () => {
         />
       </div>
     </div>
-    
+
   );
 };
 
