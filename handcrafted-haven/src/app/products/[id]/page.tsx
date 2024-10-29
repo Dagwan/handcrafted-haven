@@ -3,7 +3,6 @@
 import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'next/navigation'; 
 import axios from 'axios';
-import RootLayout from '@/app/layout';
 import CartContext from '../../../context/CartContext';
 import styles from '../../../styles/ViewSingleProduct.module.css';
 
@@ -110,7 +109,6 @@ const ProductDetailsPage = () => {
 
 
 return (
-  <RootLayout pageTitle="Product Item">
   <div className={styles.container}>
     <h1 className={styles.title}>{product.title}</h1>
     <div className={styles.detailsContainer}>
@@ -166,7 +164,6 @@ return (
       ))}
     </ul>
   </div>
-  </RootLayout>
 );
 
 };

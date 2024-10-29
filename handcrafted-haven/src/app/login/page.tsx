@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import RootLayout from '../layout';
 import styles from '../../styles/Login.module.css';
 import { AiOutlineUser, AiOutlineLock, AiOutlineMail, AiOutlineKey } from 'react-icons/ai';
 
@@ -160,7 +159,6 @@ const Login = () => {
     };
 
     return (
-        <RootLayout pageTitle="User Login">
             <div className={styles.login}>
                 <h1>User Login</h1>
                 <p>Enter your username and password to log into your account.</p>
@@ -255,7 +253,6 @@ const Login = () => {
                     </div>
                 )}
             </div>
-        </RootLayout>
     );
 };
 

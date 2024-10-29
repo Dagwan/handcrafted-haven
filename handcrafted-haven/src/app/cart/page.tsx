@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useContext } from 'react';
-import RootLayout from '../layout';
 import CartContext from '../../context/CartContext';
 import styles from '../../styles/Order.module.css';
 
@@ -35,7 +34,6 @@ const CartPage = () => {
   };
 
   return (
-    <RootLayout pageTitle="Cart Items">
     <div className={styles.cartContainer}>
       <h1 className={styles.title}>Shopping Cart</h1>
       {state.items.length === 0 ? (
@@ -64,7 +62,6 @@ const CartPage = () => {
         </>
       )}
     </div>
-    </RootLayout>
   );
 };
 

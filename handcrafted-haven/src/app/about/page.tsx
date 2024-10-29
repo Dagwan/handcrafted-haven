@@ -6,7 +6,6 @@ import axios from 'axios';
 // import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBullseye, faBalanceScale, faEye } from '@fortawesome/free-solid-svg-icons';
-import RootLayout from '../layout';
 import styles from '../../styles/About.module.css';
 
 interface WeatherData {
@@ -37,7 +36,6 @@ interface WeatherData {
     }, []);
 
     return (
-        <RootLayout pageTitle="About-us">
             <div className={styles.aboutPage}>
                 <section id="about" className={styles.section}>
                     <div className="container">
@@ -189,7 +187,6 @@ interface WeatherData {
                     </div>
                 </section>
             </div>
-        </RootLayout>
     );
 };
 

@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import RootLayout from '../layout';
 import styles from '../../styles/CreateUser.module.css';
 import { AiOutlineUser, AiOutlineMail, AiOutlineEye, AiOutlineEyeInvisible, AiOutlineLock } from 'react-icons/ai';
 
@@ -43,9 +42,9 @@ const CreateUser = () => {
         if (!['buyer', 'seller'].includes(userType)) {
             return 'User type must be either "buyer" or "seller".';
         }
-        if (profilePicture && typeof profilePicture !== 'string') {
-            return 'Profile picture must be a valid URL.';
-        }
+        // if (profilePicture && typeof profilePicture !== 'string') {
+        //     return 'Profile picture must be a valid URL.';
+        // }
         if (bio && typeof bio !== 'string') {
             return 'Bio must be a string.';
         }
@@ -105,7 +104,6 @@ const CreateUser = () => {
     };
 
     return (
-        <RootLayout pageTitle="Create Account">
         <div className={styles.createUser}>
             <h2>Create User Profile</h2>
             <p>Please fill out the form below to create your user account. Make sure to provide a valid email address and a secure password. Once registered, you will be able to log in and access your profile.</p>
@@ -205,7 +203,6 @@ const CreateUser = () => {
             </form>
             <p className={styles.loginPrompt}>Already have an account? <span onClick={() => router.push('/login')} className={styles.loginLink}>Login</span></p>
         </div>
-        </RootLayout>
     );
 };
 

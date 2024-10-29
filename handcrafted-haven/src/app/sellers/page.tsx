@@ -2,14 +2,13 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import RootLayout from '../layout';
 import styles from '../../styles/CreateUser.module.css';
 
 const CreateSellerProfile = () => {
     const [phone, setPhone] = useState('');
     const [dob, setDob] = useState('');
     const [gender, setGender] = useState('');
-    const [userId, setUserId] = useState(''); // This will store the ID of the user who is creating the seller profile
+    const [userId, setUserId] = useState(''); 
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const router = useRouter();
@@ -77,7 +76,6 @@ const CreateSellerProfile = () => {
     };
 
     return (
-        <RootLayout pageTitle="Create Seller Profile">
             <div className={styles.createUser}>
                 <h2>Create Seller Profile</h2>
                 <form onSubmit={handleSubmit}>
@@ -124,7 +122,7 @@ const CreateSellerProfile = () => {
                     Want to return? <span onClick={() => router.push('/login')} className={styles.loginLink}>Go to Login</span>
                 </p>
             </div>
-        </RootLayout>
+        
     );
 };
 
