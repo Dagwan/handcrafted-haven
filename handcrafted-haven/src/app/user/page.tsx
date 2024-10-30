@@ -23,85 +23,75 @@ const CreateUser = () => {
 
     const validateForm = () => {
         setError('');
-        // Check for validation errors
-        if (!name.trim()) {
-            return 'Name is required.';
-        }
-        if (!username.trim()) {
-            return 'Username is required.';
-        }
-        if (!/\S+@\S+\.\S+/.test(email)) {
-            return 'Valid email is required.';
-        }
-        if (password.length < 8) {
-            return 'Password must be at least 8 characters long.';
-        }
-        if (password !== confirmPassword) {
-            return 'Passwords do not match.';
-        }
-        if (!['buyer', 'seller'].includes(userType)) {
-            return 'User type must be either "buyer" or "seller".';
-        }
-        // if (profilePicture && typeof profilePicture !== 'string') {
-        //     return 'Profile picture must be a valid URL.';
-        // }
-        if (bio && typeof bio !== 'string') {
-            return 'Bio must be a string.';
-        }
-        if (address && typeof address !== 'string') {
-            return 'Address must be a string.';
-        }
+        if (!name.trim()) return 'Name is required.';
+        if (!username.trim()) return 'Username is required.';
+        if (!/\S+@\S+\.\S+/.test(email)) return 'Valid email is required.';
+        if (password.length < 8) return 'Password must be at least 8 characters long.';
+        if (password !== confirmPassword) return 'Passwords do not match.';
+        if (!['buyer', 'seller'].includes(userType)) return 'User type must be either "buyer" or "seller".';
+        if (bio && typeof bio !== 'string') return 'Bio must be a string.';
+        if (address && typeof address !== 'string') return 'Address must be a string.';
         return null;
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setSuccess('');
-
-        // Validate the form fields
+      
         const validationError = validateForm();
         if (validationError) {
-            setError(validationError);
-            return;
+          setError(validationError);
+          return;
         }
-
+      
         try {
-            const response = await fetch('https://handcrafted-haven-api.onrender.com/users', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name,
-                    username,
-                    email,
-                    password,
-                    confirmPassword,
-                    userType,
-                    profilePicture,
-                    bio,
-                    address,
-                }),
-            });
-
-            const data = await response.json();
-            if (!response.ok) {
-                throw new Error(data.message || 'Failed to create user');
-            }
-
-            setSuccess('User created successfully! Redirecting to login...');
-            setTimeout(() => {
-                router.push('/login');
-            }, 2000);
-        } catch (err: unknown) {
-            if (err instanceof Error) {
-                setError(err.message);
+          const response = await fetch('https://handcrafted-haven-api.onrender.com/users', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              name,
+              username,
+              email,
+              password,
+              confirmPassword,
+              userType,
+              profilePicture,
+              bio,
+              address,
+            }),
+          });
+      
+          const data = await response.json();
+          if (!response.ok) throw new Error(data.message || 'Failed to create user');
+      
+          // Store the token in local storage for seller profile creation
+          localStorage.setItem('accessToken', data.accessToken); 
+          console.log('Stored token:', data.accessToken);
+      
+          setSuccess('User created successfully! Redirecting to seller...');
+          setTimeout(() => {
+            if (userType === 'seller') {
+              router.push('/sellers'); 
             } else {
-                setError('An unexpected error occurred');
+              router.push('/products');
             }
-        } 
-        
-    };
+          }, 2000);
+        } catch (err: unknown) {
+          if (err instanceof Error) {
+            if (err.message === 'Unauthorized' || err.message === 'Invalid token') {
+              // Handle token invalidation
+              localStorage.removeItem('token'); 
+              setError('Your login session has expired. Please log in again.');
+            } else {
+              setError(err.message);
+            }
+          } else {
+            setError('An unexpected error occurred');
+          }
+        }
+      };
 
     return (
         <div className={styles.createUser}>

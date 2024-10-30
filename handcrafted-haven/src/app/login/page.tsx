@@ -87,7 +87,7 @@ const Login = () => {
             }
 
             setError('');
-            window.location.href = '/sellers/dashboard';
+            window.location.href = 'products/add';
         } catch (err) {
             if (err instanceof Error) {
                 setError(err.message);

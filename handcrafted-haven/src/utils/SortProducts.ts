@@ -11,7 +11,7 @@ export const sortProducts = (products: Product[], sortOption: string): Product[]
       return [...products].sort((a, b) => {
         const aRating = calculateAverageRating(a.reviews || []);
         const bRating = calculateAverageRating(b.reviews || []);
-        return bRating - aRating; // Sort by highest rating
+        return bRating - aRating; 
       });
     case 'newest':
     default:

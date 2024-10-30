@@ -18,8 +18,8 @@ interface Product {
   price: number;
   stockQuantity: number;
   imageUrl?: string;
-  categoryId?: string; // Optional categoryId field
-  reviews?: { rating: number }[]; // Optional reviews field
+  categoryId?: string; 
+  reviews?: { rating: number }[]; 
 }
 
 const ProductsPage = () => {
@@ -56,12 +56,12 @@ const ProductsPage = () => {
 
   // Filter products based on selected category and search query
   const filteredProducts = sortProducts(products, sortOption).filter(product => {
-    const matchesCategory = selectedCategory ? product.title === selectedCategory : true; // Check for exact title match
+    const matchesCategory = selectedCategory ? product.title === selectedCategory : true; 
     const matchesSearchQuery =
       product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.price.toString().includes(searchQuery);
-    return matchesCategory && matchesSearchQuery; // Combine both filters
+    return matchesCategory && matchesSearchQuery; 
   });
 
   // Calculate total pages
