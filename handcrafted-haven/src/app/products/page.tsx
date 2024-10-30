@@ -88,9 +88,9 @@ const ProductsPage = () => {
         <h1>Products</h1>
 
         <div className={styles.buttonSearchContainer}>
-          <Link href="/products/add">
+          {/* <Link href="/products/add">
             <button className={styles.button}>Add New Product</button>
-          </Link>
+          </Link> */}
           <SearchFilter sortOption={sortOption} setSortOption={setSortOption} />
         </div>
 
