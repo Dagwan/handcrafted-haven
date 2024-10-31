@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../styles/CreateUser.module.css';
+import RootLayout from '../layout';
 
 const CreateSellerProfile = () => {
     const [phone, setPhone] = useState('');
@@ -65,6 +66,7 @@ const CreateSellerProfile = () => {
     };
 
     return (
+        <RootLayout pageTitle="Seller's Profile">
         <div className={styles.createUser}>
             <h2>Create Seller Profile</h2>
             <form onSubmit={handleSubmit}>
@@ -100,6 +102,7 @@ const CreateSellerProfile = () => {
             </form>
             
         </div>
+        </RootLayout>
     );
 };
 

@@ -7,6 +7,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBullseye, faBalanceScale, faEye } from '@fortawesome/free-solid-svg-icons';
 import styles from '../../styles/About.module.css';
+import RootLayout from '../layout';
 
 interface WeatherData {
     main: { temp: number };
@@ -36,6 +37,7 @@ interface WeatherData {
     }, []);
 
     return (
+        <RootLayout pageTitle="About Us">
             <div className={styles.aboutPage}>
                 <section id="about" className={styles.section}>
                     <div className="container">
@@ -187,6 +189,7 @@ interface WeatherData {
                     </div>
                 </section>
             </div>
+            </RootLayout>
     );
 };
 

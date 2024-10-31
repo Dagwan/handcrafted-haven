@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
+import RootLayout from './layout';
 
 const Home: React.FC = () => {
     // Counter state for sold handcrafted items
@@ -19,6 +20,7 @@ const Home: React.FC = () => {
     }, []);
 
     return (
+        <RootLayout pageTitle='Home'>
        
         <div className={styles.container}>    
 
@@ -187,7 +189,7 @@ const Home: React.FC = () => {
                 </section>
             </main>
         </div>
-      
+        </RootLayout>      
     );
 };
 

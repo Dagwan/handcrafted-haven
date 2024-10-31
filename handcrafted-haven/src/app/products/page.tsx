@@ -10,6 +10,7 @@ import PaginationControls from '../../components/PaginationControls';
 import CategorySidebar from '../../components/CategorySidebar';
 import { sortProducts } from '../../utils/SortProducts';
 import styles from "../../styles/ProductsPage.module.css";
+import RootLayout from '../layout';
 
 interface Product {
   _id: string;
@@ -79,6 +80,7 @@ const ProductsPage = () => {
   if (error) return <p>{error}</p>;
 
   return (
+    <RootLayout pageTitle='Products'>
     <div className={styles.container}>
       <div className={styles.categorySidebar}>
         <CategorySidebar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
@@ -120,6 +122,7 @@ const ProductsPage = () => {
         />
       </div>
     </div>
+    </RootLayout>
   );
 };
 

@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import axios from 'axios';
 import CartContext from '../../../context/CartContext';
 import styles from '../../../styles/ViewSingleProduct.module.css';
+import RootLayout from '@/app/layout';
 
 interface Product {
   _id: string;
@@ -109,6 +110,7 @@ const ProductDetailsPage = () => {
 
 
 return (
+  <RootLayout pageTitle='View Product'>
   <div className={styles.container}>
     <h1 className={styles.title}>{product.title}</h1>
     <div className={styles.detailsContainer}>
@@ -164,6 +166,7 @@ return (
       ))}
     </ul>
   </div>
+  </RootLayout>
 );
 
 };

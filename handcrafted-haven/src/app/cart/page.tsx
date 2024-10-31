@@ -3,6 +3,7 @@
 import React, { useContext } from 'react';
 import CartContext from '../../context/CartContext';
 import styles from '../../styles/Order.module.css';
+import RootLayout from '../layout';
 
 const CartPage = () => {
   const { state, dispatch } = useContext(CartContext);
@@ -34,6 +35,7 @@ const CartPage = () => {
   };
 
   return (
+    <RootLayout pageTitle='Cart'>
     <div className={styles.cartContainer}>
       <h1 className={styles.title}>Shopping Cart</h1>
       {state.items.length === 0 ? (
@@ -62,6 +64,7 @@ const CartPage = () => {
         </>
       )}
     </div>
+    </RootLayout>
   );
 };
 

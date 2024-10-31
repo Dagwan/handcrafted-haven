@@ -1,5 +1,3 @@
-// src/app/layout.tsx
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import localFont from "next/font/local";
@@ -32,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>{`${pageTitle} | Handcrafted Haven`}</title>
+        <title>{`${pageTitle} - Handcrafted Haven`}</title>
         {/* Favicon */}
         <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/images/favicon.png" type="image/png" sizes="32x32" />
