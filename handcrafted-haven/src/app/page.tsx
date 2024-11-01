@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-import RootLayout from './layout';
 
 const Home: React.FC = () => {
     // Counter state for sold handcrafted items
@@ -19,9 +18,7 @@ const Home: React.FC = () => {
         return () => clearInterval(interval);
     }, []);
 
-    return (
-        <RootLayout pageTitle='Home'>
-       
+    return (       
         <div className={styles.container}>    
 
             <main className={styles.main}>
@@ -188,8 +185,7 @@ const Home: React.FC = () => {
                     </div>
                 </section>
             </main>
-        </div>
-        </RootLayout>      
+        </div>      
     );
 };
 
