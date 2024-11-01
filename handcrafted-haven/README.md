@@ -1,6 +1,6 @@
 # Handcrafted Haven Application
 
-The Handcrafted Haven Application is a Nextjs-Typescript web application designed to provide a user-friendly interface for a marketplace dedicated to handcrafted items. Built with Next.js and TypeScript, this frontend connects customers with artisans, allowing them to browse, search, and purchase unique handcrafted products. The application features intuitive navigation, product listings, user authentication, and seller profiles, ensuring a seamless shopping experience.
+The [Handcrafted Haven Application](https://handcrafted-haven-tau.vercel.app/) is a Nextjs-Typescript web application designed to provide a user-friendly interface for a marketplace dedicated to handcrafted items. Built with Next.js and TypeScript, this frontend connects customers with artisans, allowing them to browse, search, and purchase unique handcrafted products. The application features intuitive navigation, product listings, user authentication, and seller profiles, ensuring a seamless shopping experience.
 
 ## Overview
 
