@@ -19,7 +19,6 @@ Handcrafted Haven aims to connect talented artisans with customers by providing 
 To run this project locally:
 1. Clone the repository.
 2. Install dependencies:
-   ```bash
 3. pnpm install or i
 4. pnpm dev to run the application.
 
