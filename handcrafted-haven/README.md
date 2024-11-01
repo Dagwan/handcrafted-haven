@@ -57,4 +57,4 @@ The application handles errors gracefully, providing user-friendly messages for:
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE](/docs/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](/handcrafted-haven/docs/LICENSE) file for details.
