@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from "../../../styles/AddProduct.module.css";
-import RootLayout from '@/app/layout';
+// import RootLayout from '@/app/layout';
 
 const AddProductPage = () => {
   const [title, setTitle] = useState('');
@@ -48,7 +48,7 @@ const AddProductPage = () => {
   };
 
   return (
-    <RootLayout pageTitle='Add Product'>
+    // <RootLayout pageTitle='Add Product'>
     <div className={styles.container}>
       <form onSubmit={handleAddProduct} className={styles.gridContainer}>
         <input className={styles.input} type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" required />
@@ -61,7 +61,7 @@ const AddProductPage = () => {
       </form>
 
     </div>
-    </RootLayout>
+    // </RootLayout>
   );
 };
 
