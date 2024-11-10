@@ -74,7 +74,7 @@ const Header = () => {
             <span className={expanded ? styles.active : ''}></span>
             <span className={expanded ? styles.active : ''}></span>
             <span className={expanded ? styles.active : ''}></span>
-            <span className={expanded ? styles.active : ''}></span>
+            {/* <span className={expanded ? styles.active : ''}></span> */}
           </div>
 
           <nav className={`${styles.nav} ${expanded ? styles.open : ''}`}>
@@ -117,7 +117,7 @@ const Header = () => {
             <nav className={styles.popupNav}>
               <ul>
                 <li><Link href="/" onClick={handleNavClick}>Home</Link></li>
-                <li><Link href="/about-us" onClick={handleNavClick}>About Us</Link></li>
+                <li><Link href="/about" onClick={handleNavClick}>About Us</Link></li>
                 <li><Link href="/sellers" onClick={handleNavClick}>Seller Profiles</Link></li>
                 <li><Link href="/products" onClick={handleNavClick}>Products</Link></li>
               </ul>
